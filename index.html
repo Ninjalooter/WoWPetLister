@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<script src="jquery.1.6.1.js"></script>
+		<script>
+			var g_spells = [];
+			var g_items = [];
+		</script>
+		<script src="pet_list.js"></script>
+		<script>
+			function parse_liste(sListe) {
+				var result = [];
+				
+				var offset = 0;
+				do {
+					var pos = sListe.indexOf("[", offset);
+					if ( pos < 0 ) break;
+					
+					var end = sListe.indexOf("]", pos + 1);
+					var id = sListe.substring(pos + 1, end);
+					result.push(parseInt(id));
+					
+					offset = end + 1;
+				} while ( true);
+				return result;
+			}
+			function filterSpellIdListe(aListe) {
+				var spells = jQuery.grep(g_spells, function(spell, spellId) {
+					return spell && jQuery.inArray(spellId, aListe) == -1;
+				});
+				return spells;
+			}
+			
+			$(document).ready(function(){ 
+				// Enrhich the g_spells array
+				jQuery.each(g_spells, function(spellId, spell) {
+					if ( !spell) 
+						return;
+					spell.id = spellId;
+				});
+				
+				$("#btn_scan").click(function() {
+					
+					var list = $("#pet_list");
+					var missingSpells = filterSpellIdListe(parse_liste(list.val()));
+
+					// Prepare output list
+					var resultList = $("#result_list");
+					var ul = $("<ul></ul>");
+					resultList.empty().append(ul);
+					
+					if ( missingSpells.length == 0 ) {
+						ul.append("<li>Du hast alles!</li>");
+					} else {
+						var cnt = 1;
+						jQuery.each(missingSpells, function(index, value) {
+							var id = value.id;
+							var name = value.name_dede;
+							ul.append("<li><a href=\"http://de.wowhead.com/spell=" + id + "\">" + cnt + ". " + name + "</a></li>");
+							
+							cnt++;
+						});
+					}
+					
+					$WowheadPower.init();
+				});
+			});
+		</script>
+		<script type="text/javascript" src="http://static.wowhead.com/js/basic.js?5"></script>
+		<script type="text/javascript" src="http://static.wowhead.com/widgets/power.js"></script>
+	</head>
+	<body>	
+		<div>
+			<textarea cols="40" rows="12" id="pet_list"></textarea> <br />
+			<button id="btn_scan">Scan!</button><br />
+		</div>
+		<div id="result_list"></div>
+	</body>
+</html>
+	

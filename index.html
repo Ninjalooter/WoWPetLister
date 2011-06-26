@@ -7,9 +7,23 @@
 			
 			var g_lootcard_spells = [
 				// Example: 1, 4, 61234, 125123, 1245123
-				68810
+				68810, 49964, 40549, 93624, 96819, 96817, 45127, 30156, 45125, 68767
 			];
 			
+			var g_blizcollectables_spells = [
+				// Example: 1, 4, 61234, 125123, 1245123
+				62456, 66030, 87344, 24988, 17708, 17707, 17709, 78381, 53082, 24696, 32298, 94070, 52615
+			];
+			
+			var g_blizshop_spells = [
+				// Example: 1, 4, 61234, 125123, 1245123
+				69541, 99578, 69677, 95787, 69452, 75906, 95786, 69535, 68619, 69536
+			];
+			
+			var g_limitededitions_spells = [
+				// Example: 1, 4, 61234, 125123, 1245123
+				61855, 54187, 48408, 45174, 45175, 27241, 66520, 23531, 23530, 40405, 55068, 69002, 48406, 51851, 65682, 28505, 64351
+			];
 			
 		</script>
 		<script src="pet_list.js"></script>
@@ -64,6 +78,27 @@
 						});
 					}
 					
+					// Filter g_blizcollectables_spells
+					if ( $("#filter_blizzcoll").attr("checked") ) {
+						missingSpells = jQuery.grep(missingSpells, function(spell, index) {
+							return jQuery.inArray(spell.id, g_blizcollectables_spells) == -1;
+						});
+					}
+					
+					// Filter g_blizshop_spells
+					if ( $("#filter_blizzshop").attr("checked") ) {
+						missingSpells = jQuery.grep(missingSpells, function(spell, index) {
+							return jQuery.inArray(spell.id, g_blizshop_spells) == -1;
+						});
+					}
+					
+					// Filter g_limitededitions_spells
+					if ( $("#filter_limited").attr("checked") ) {
+						missingSpells = jQuery.grep(missingSpells, function(spell, index) {
+							return jQuery.inArray(spell.id, g_limitededitions_spells) == -1;
+						});
+					}
+					
 					// Prepare output list
 					var resultList = $("#result_list");
 					var ul = $("<ol></ol>");
@@ -88,7 +123,20 @@
 							li.append("<a href=\"http://de.wowhead.com/spell=" + id + "\">" + name + "</a>");
 							if(jQuery.inArray(id, g_lootcard_spells) >= 0) {
 								li.append(" - LOOTKARTE");
-							}							
+							}	
+
+							if(jQuery.inArray(id, g_blizcollectables_spells) >= 0) {
+								li.append(" - Blizzard Collectable");
+							}			
+							
+							if(jQuery.inArray(id, g_blizshop_spells) >= 0) {
+								li.append(" - Blizzard Shop");
+							}
+							
+							if(jQuery.inArray(id, g_limitededitions_spells) >= 0) {
+								li.append(" - Limited Edition");
+							}
+							
 							ul.append(li);
 						});
 					}
@@ -126,7 +174,10 @@
 				<b>How to Scan for Missing Pets:</b> <a href="howtoenglish.html">English</a> | <a href="howtodeutsch.html">Deutsch</a><br />
 				<br />
 				<textarea cols="40" rows="12" id="pet_list"></textarea> <br /> <br />
-				<input type="checkbox" value="true" id="filter_lootcards" checked="checked" /><label for="filter_lootcards">Hide lootcard pets</label><br /><br />
+				<input type="checkbox" value="true" id="filter_lootcards" checked="checked" /><label for="filter_lootcards">Hide lootcard pets</label>
+				<input type="checkbox" value="true" id="filter_limited" checked="checked" /><label for="filter_limited">Hide Limited Editions</label><br />
+				<input type="checkbox" value="true" id="filter_blizzcoll" checked="checked" /><label for="filter_blizzcoll">Hide Blizzard Collectables</label>
+				<input type="checkbox" value="true" id="filter_blizzshop" checked="checked" /><label for="filter_blizzshop">Hide Blizzard Shop</label><br /><br />
 				<button id="btn_scan"><img alt="Click to list your missing pets." title="Scan!" style="padding: 0pt 0px 0px 0pt;" src="scan_button4.png"/></button><br />
 			</div>
 			
@@ -134,7 +185,7 @@
 			
 			
 			<div class="footer">
-				Presented by <a href="http://ninjalooter.de/">Ninjalooter.de</a>
+				Presented by <a href="http://ninjalooter.de/">Ninjalooter.de</a> | Database <a href="http://de.wowhead.com/">wowhead.com</a>
 			</div>
 			
 		</div>

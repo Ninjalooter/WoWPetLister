@@ -1,6 +1,11 @@
 <html>
 	<head>
 		<style>
+			#body {
+				width:600px;
+				text-align:center;
+				margin-top:40px;
+			}
 			#footer {
 				text-align:center;
 				margin:auto;
@@ -9,31 +14,43 @@
 			.center {
 				margin:auto;
 			}
+			
+			.step {
+				margin-bottom:20px;
+			}
 		</style>
 	</head>
 	<body>	
-		<div style="text-align:center; width:600px" class="center">
-			<a href="index.html">
-				<img border="0" style="padding: 20pt 0px 0px 0pt;" title="WoW Pet Lister" src="http://www.ninjalooter.de/WoWPetLister/WPL_Banner.png" alt="" width="600" height="100" />
-			</a>
+		<div id="body" class="center">
+			<div id="header">
+				<a href="index.html">
+					<img border="0" alt="Wow Pet Lister" title="WoW Pet Lister" src="http://www.ninjalooter.de/WoWPetLister/WPL_Banner.png" alt="" width="600" height="100" />
+				</a>
 			
-			<h1>How To Scan for Pets</h1>
-			
-			<img style="padding: 5pt 0px 0px 0pt;" title="Step 1" src="http://www.ninjalooter.de/WoWPetLister/Guide_1_5.jpg" />
-			<br />
-			<br />
-			
-			<div >
-				<h2>Step 2: Copy this macro and post it into the chat:</h2>
-				<div class="center" style="background-color:#A5A5A5; border:thin solid black; width: 600px; font-family:monospace">
-					/run local c,p,i='CRITTER','' for j=1,GetNumCompanions(c)do _,_,i=GetCompanionInfo(c,j) p=p..'['..i..']'end LoadAddOn'Blizzard_DebugTools'ScriptErrorsFrame:Show() ScriptErrorsFrameScrollFrameText:SetText(p)
-				</div>
+				<h1>How To Scan for Missing Pets</h1>
 			</div>
-			<div>
-				<p align="center">
-					<img style="padding: 20pt 0px 0px 0pt;" title="Step 2" src="http://www.ninjalooter.de/WoWPetLister/Guide_2_2.jpg" /><br />
-					<img style="padding: 20pt 0px 0px 0pt;" title="Step 3" src="http://www.ninjalooter.de/WoWPetLister/Guide_3_8.jpg" /><br />
-				</p>
+			
+			<div id="steps">
+				<div id="step1" class="step">
+					<img style="padding: 5pt 0px 0px 0pt;" title="Step 1" src="http://www.ninjalooter.de/WoWPetLister/Guide_1_6.jpg" />
+				</div>
+				
+				<div id="step2" class="step">
+					<h2>Step 2: Copy this macro and paste it into the chat:</h2>
+					<div class="center" style="background-color:#A5A5A5; border:thin solid black; width: 600px; font-family:monospace">
+						/run local c,p,i='CRITTER','' for j=1,GetNumCompanions(c)do _,_,i=GetCompanionInfo(c,j) p=p..'['..i..']'end LoadAddOn'Blizzard_DebugTools'ScriptErrorsFrame:Show() ScriptErrorsFrameScrollFrameText:SetText(p)
+					</div>
+					<h3>Copy & Paste Tip:</h3>
+					<img style="padding: 0pt 0px 0px 0pt;" title="Copy + Paste" src="http://www.ninjalooter.de/WoWPetLister/Copy_Paste.png" /><br />
+				</div>
+				
+				<div id="step3" class="step">
+					<p align="center">
+						<img style="padding: 20pt 0px 0px 0pt;" title="Step 3" src="http://www.ninjalooter.de/WoWPetLister/Guide_2_1_2.jpg" /><br />
+						<img style="padding: 20pt 0px 0px 0pt;" title="Step 4" src="http://www.ninjalooter.de/WoWPetLister/Guide_3_1_2.jpg" /><br />
+						<img style="padding: 20pt 0px 0px 0pt;" title="Step 5" src="http://www.ninjalooter.de/WoWPetLister/Guide_4_1.jpg" /><br />
+					</p>
+				</div>
 			</div>
 			
 			<div id="footer">

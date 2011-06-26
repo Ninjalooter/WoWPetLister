@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<style>
+			#footer {
+				text-align:center;
+				margin:auto;
+				padding:30px;
+			}
+			.center {
+				margin:auto;
+			}
+		</style>
+	</head>
+	<body>	
+		<div style="text-align:center; width:600px" class="center">
+			<a href="index.html">
+				<img border="0" style="padding: 20pt 0px 0px 0pt;" title="WoW Pet Lister" src="http://www.ninjalooter.de/WoWPetLister/WPL_Banner.png" alt="" width="600" height="100" />
+			</a>
+			
+			<h1>How To Scan for Pets</h1>
+			
+			<img style="padding: 5pt 0px 0px 0pt;" title="Step 1" src="http://www.ninjalooter.de/WoWPetLister/Guide_1_5.jpg" />
+			<br />
+			<br />
+			
+			<div >
+				<h2>Step 2: Copy this macro and post it into the chat:</h2>
+				<div class="center" style="background-color:#A5A5A5; border:thin solid black; width: 600px; font-family:monospace">
+					/run local c,p,i='CRITTER','' for j=1,GetNumCompanions(c)do _,_,i=GetCompanionInfo(c,j) p=p..'['..i..']'end LoadAddOn'Blizzard_DebugTools'ScriptErrorsFrame:Show() ScriptErrorsFrameScrollFrameText:SetText(p)
+				</div>
+			</div>
+			<div>
+				<p align="center">
+					<img style="padding: 20pt 0px 0px 0pt;" title="Step 2" src="http://www.ninjalooter.de/WoWPetLister/Guide_2_2.jpg" /><br />
+					<img style="padding: 20pt 0px 0px 0pt;" title="Step 3" src="http://www.ninjalooter.de/WoWPetLister/Guide_3_8.jpg" /><br />
+				</p>
+			</div>
+			
+			<div id="footer">
+				Presented by <a href="http://ninjalooter.de/">Ninjalooter.de</a>
+			</div>
+		</div>
+	</body>
+</html>

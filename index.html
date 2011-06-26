@@ -4,6 +4,13 @@
 		<script>
 			var g_spells = [];
 			var g_items = [];
+			
+			var g_lootcard_spells = [
+				// Example: 1, 4, 61234, 125123, 1245123
+				68810
+			];
+			
+			
 		</script>
 		<script src="pet_list.js"></script>
 		<script>
@@ -23,6 +30,7 @@
 				} while ( true);
 				return result;
 			}
+			
 			function filterSpellIdListe(aListe) {
 				var spells = jQuery.grep(g_spells, function(spell, spellId) {
 					return spell && jQuery.inArray(spellId, aListe) == -1;
@@ -42,38 +50,76 @@
 					
 					var list = $("#pet_list");
 					var missingSpells = filterSpellIdListe(parse_liste(list.val()));
-
+					
+					// Filter loot card spells from g_lootcard_spells
+					if ( $("#filter_lootcards").attr("checked") ) {
+						missingSpells = jQuery.grep(missingSpells, function(spell, index) {
+							return jQuery.inArray(spell.id, g_lootcard_spells) == -1;
+						});
+					}
+					
 					// Prepare output list
 					var resultList = $("#result_list");
-					var ul = $("<ul></ul>");
-					resultList.empty().append(ul);
+					var ul = $("<ol></ol>");
+					resultList.empty().append("<h2>Your Missing Pets</h2>").append(ul);
 					
 					if ( missingSpells.length == 0 ) {
 						ul.append("<li>Du hast alles!</li>");
 					} else {
-						var cnt = 1;
 						jQuery.each(missingSpells, function(index, value) {
 							var id = value.id;
 							var name = value.name_dede;
-							ul.append("<li><a href=\"http://de.wowhead.com/spell=" + id + "\">" + cnt + ". " + name + "</a></li>");
+							ul.append("<li><a href=\"http://de.wowhead.com/spell=" + id + "\">" + name + "</a>" + (jQuery.inArray(id, g_lootcard_spells) >= 0 ? " - LOOTKARTE" : "") +"</li>");
 							
-							cnt++;
 						});
 					}
 					
 					$WowheadPower.init();
 				});
+				
 			});
 		</script>
-		<script type="text/javascript" src="http://static.wowhead.com/js/basic.js?5"></script>
 		<script type="text/javascript" src="http://static.wowhead.com/widgets/power.js"></script>
+		
+		<style>
+			.center{
+				margin:auto;
+			}
+			
+			#header {
+			}
+			.content {
+				text-align:center;
+			}
+			.footer {
+				margin-top:30px;
+				margin-bottom:20px;
+				text-align:center;
+			}
+		</style>
 	</head>
 	<body>	
-		<div>
-			<textarea cols="40" rows="12" id="pet_list"></textarea> <br />
-			<button id="btn_scan">Scan!</button><br />
+		<div style="width:600px" class="center">
+			<div id="header">
+				<img style="padding: 20pt 0px 0px 0pt;" title="WoW Pet Lister" src="WPL_Banner.png" alt="" width="600" height="100" />
+			</div>			
+			<div class="content">
+				<b>How to Scan for Missing Pets:</b> <a href="howtoenglish.html">English</a> | <a href="howtodeutsch.html">Deutsch</a><br />
+				<br />
+				<textarea cols="40" rows="12" id="pet_list"></textarea> <br /> <br />
+				<input type="checkbox" value="true" id="filter_lootcards" checked="checked" /><label for="filter_lootcards">Hide lootcard pets</label><br /><br />
+				<button id="btn_scan"><img alt="Click to list your missing pets." title="Scan!" style="padding: 0pt 0px 0px 0pt;" src="scan_button4.png"/></button><br />
+			</div>
+			
+			<div id="result_list"></div>
+			
+			
+			<div class="footer">
+				Presented by <a href="http://ninjalooter.de/">Ninjalooter.de</a>
+			</div>
+			
 		</div>
-		<div id="result_list"></div>
+		
 	</body>
 </html>
 	

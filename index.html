@@ -38,6 +38,12 @@
 				return spells;
 			}
 			
+			function wowhead_spellicon(spell) {
+				if ( spell.icon ) {
+					return "http://static.wowhead.com/images/wow/icons/small/" + spell.icon + ".jpg";  
+				}
+			}
+			
 			$(document).ready(function(){ 
 				// Enrhich the g_spells array
 				jQuery.each(g_spells, function(spellId, spell) {
@@ -69,8 +75,21 @@
 						jQuery.each(missingSpells, function(index, value) {
 							var id = value.id;
 							var name = value.name_dede;
-							ul.append("<li><a href=\"http://de.wowhead.com/spell=" + id + "\">" + name + "</a>" + (jQuery.inArray(id, g_lootcard_spells) >= 0 ? " - LOOTKARTE" : "") +"</li>");
 							
+							var li = $("<li></li>");
+							var spellIcon = wowhead_spellicon(value);
+							if (spellIcon) {
+								var img = $("<img />");
+								img.attr("border", "0");
+								img.attr("src", spellIcon);
+								li.append(img).append(" ");
+							}
+							
+							li.append("<a href=\"http://de.wowhead.com/spell=" + id + "\">" + name + "</a>");
+							if(jQuery.inArray(id, g_lootcard_spells) >= 0) {
+								li.append(" - LOOTKARTE");
+							}							
+							ul.append(li);
 						});
 					}
 					

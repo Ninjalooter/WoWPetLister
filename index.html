@@ -1,33 +1,83 @@
 <html>
 	<head>
+	<title>WoW Pet Lister - Ninjalooter</title>
 		<script src="jquery.1.6.1.js"></script>
 		<script>
+			var gMountSpells, gPetSpells;
+			
+			var gDecoratorAndFilters = [
+				{
+					name: "Lootcard pets",
+					ids: [68810, 49964, 40549, 93624, 96819, 96817, 45127, 30156, 45125, 68767],
+					
+					filter_element_id: "#filter_lootcards",
+					decorator_text: " - LOOTKARTE"
+				},
+				
+				{
+					name: "Blizzard Collectables (Pets)",
+					ids: [62456, 66030, 87344, 24988, 17708, 17707, 17709, 78381, 53082, 24696, 32298, 94070, 52615],
+					
+					filter_element_id: "#filter_blizzcoll",
+					decorator_text: " - Blizzard Collectable"
+				},
+				
+				{
+					name: "Blizzard Shop (Pets)",
+					ids: [69541, 99578, 69677, 95787, 69452, 75906, 95786, 69535, 68619, 69536],
+					
+					filter_element_id: "#filter_blizzshop",
+					decorator_text: " - Blizzard Shop"
+				},
+				
+				{
+					name: "Limited Edition (Pets)",
+					ids: [61855, 54187, 48408, 45174, 45175, 27241, 66520, 23531, 23530, 40405, 55068, 69002, 48406, 51851, 65682, 28505, 64351],
+					
+					filter_element_id: "#filter_limited",
+					decorator_text: " - Limited Edition"
+				},
+				
+				{
+					name: "Horde only",
+					ids: [92396, 92398, 101989, 95909],
+					
+					decorator_text: " - <span class=\"horde\">HORDE ONLY</span>"
+				},
+				
+				{
+					name: "Alliance only",
+					ids: [92395, 92397, 101986, 95786],
+					decorator_text: " - <span class=\"allianz\">ALLIANZ ONLY</span>"
+				},
+				
+				{
+					name: "Last patch (4.2)",
+					ids: [101986, 101989, 99663, 99668, 45890, 100970, 101424, 75613, 100576],
+					decorator_text: " - <span class=\"newpatch\">Patch 4.2</span>"
+				}
+			];
+			
 			var g_spells = [];
 			var g_items = [];
-			
-			var g_lootcard_spells = [
-				// Example: 1, 4, 61234, 125123, 1245123
-				68810, 49964, 40549, 93624, 96819, 96817, 45127, 30156, 45125, 68767
-			];
-			
-			var g_blizcollectables_spells = [
-				// Example: 1, 4, 61234, 125123, 1245123
-				62456, 66030, 87344, 24988, 17708, 17707, 17709, 78381, 53082, 24696, 32298, 94070, 52615
-			];
-			
-			var g_blizshop_spells = [
-				// Example: 1, 4, 61234, 125123, 1245123
-				69541, 99578, 69677, 95787, 69452, 75906, 95786, 69535, 68619, 69536
-			];
-			
-			var g_limitededitions_spells = [
-				// Example: 1, 4, 61234, 125123, 1245123
-				61855, 54187, 48408, 45174, 45175, 27241, 66520, 23531, 23530, 40405, 55068, 69002, 48406, 51851, 65682, 28505, 64351
-			];
-			
 		</script>
 		<script src="pet_list.js"></script>
 		<script>
+			gPetSpells = g_spells;
+			
+			// Reset g_spells
+			g_spells = [];
+		</script>
+		<script src="mount_list.js"></script>
+		<script>
+			gMountSpells = g_spells;
+		</script>
+		
+		
+		<script>
+			/**
+			 * Parses the list (format: "[id1][id2][id3]..") and returns the ids as ints in an array.
+			 */
 			function parse_liste(sListe) {
 				var result = [];
 				
@@ -45,8 +95,8 @@
 				return result;
 			}
 			
-			function filterSpellIdListe(aListe) {
-				var spells = jQuery.grep(g_spells, function(spell, spellId) {
+			function filterSpellIdListe(aListe, spells) {
+				var spells = jQuery.grep(spells, function(spell, spellId) {
 					return spell && jQuery.inArray(spellId, aListe) == -1;
 				});
 				return spells;
@@ -60,52 +110,48 @@
 			
 			$(document).ready(function(){ 
 				// Enrhich the g_spells array
-				jQuery.each(g_spells, function(spellId, spell) {
+				jQuery.each(gPetSpells, function(spellId, spell) {
 					if ( !spell) 
 						return;
 					spell.id = spellId;
 				});
 				
 				$("#btn_scan").click(function() {
+					var spellIdList;
+					var spellText;
+					
+					if ( $("#list_ide").val() == "pets" ) {
+						spellIdList = gPetSpells;
+						spellText = "pets";
+					} else {
+						spellIdList = gMountSpells;
+						spellText = "mounts";
+					}
+					
 					
 					var list = $("#pet_list");
-					var missingSpells = filterSpellIdListe(parse_liste(list.val()));
+					var playerSpellList = parse_liste(list.val());
+					var missingSpells = filterSpellIdListe(playerSpellList, spellIdList);
 					
-					// Filter loot card spells from g_lootcard_spells
-					if ( $("#filter_lootcards").attr("checked") ) {
-						missingSpells = jQuery.grep(missingSpells, function(spell, index) {
-							return jQuery.inArray(spell.id, g_lootcard_spells) == -1;
-						});
-					}
 					
-					// Filter g_blizcollectables_spells
-					if ( $("#filter_blizzcoll").attr("checked") ) {
-						missingSpells = jQuery.grep(missingSpells, function(spell, index) {
-							return jQuery.inArray(spell.id, g_blizcollectables_spells) == -1;
-						});
-					}
-					
-					// Filter g_blizshop_spells
-					if ( $("#filter_blizzshop").attr("checked") ) {
-						missingSpells = jQuery.grep(missingSpells, function(spell, index) {
-							return jQuery.inArray(spell.id, g_blizshop_spells) == -1;
-						});
-					}
-					
-					// Filter g_limitededitions_spells
-					if ( $("#filter_limited").attr("checked") ) {
-						missingSpells = jQuery.grep(missingSpells, function(spell, index) {
-							return jQuery.inArray(spell.id, g_limitededitions_spells) == -1;
-						});
-					}
+					// Process all filters
+					jQuery.each(gDecoratorAndFilters, function(index, value) { 
+						if ( !value.filter_element_id )
+							return;
+						
+						// Check if the filter is 'checked'
+						if ( $(value.filter_element_id).attr("checked") ) {
+							// Filter all ids from that list
+							missingSpells = jQuery.grep(missingSpells, function(spell, index) {
+								return jQuery.inArray(spell.id, value.ids) == -1;
+							});
+						}
+					});
 					
 					// Prepare output list
-					var resultList = $("#result_list");
 					var ul = $("<ol></ol>");
-					resultList.empty().append("<h2>Your Missing Pets</h2>").append(ul);
-					
 					if ( missingSpells.length == 0 ) {
-						ul.append("<li>Du hast alles!</li>");
+						ul.append("<li>You have everything!</li>");
 					} else {
 						jQuery.each(missingSpells, function(index, value) {
 							var id = value.id;
@@ -121,25 +167,28 @@
 							}
 							
 							li.append("<a href=\"http://de.wowhead.com/spell=" + id + "\">" + name + "</a>");
-							if(jQuery.inArray(id, g_lootcard_spells) >= 0) {
-								li.append(" - LOOTKARTE");
-							}	
-
-							if(jQuery.inArray(id, g_blizcollectables_spells) >= 0) {
-								li.append(" - Blizzard Collectable");
-							}			
 							
-							if(jQuery.inArray(id, g_blizshop_spells) >= 0) {
-								li.append(" - Blizzard Shop");
-							}
-							
-							if(jQuery.inArray(id, g_limitededitions_spells) >= 0) {
-								li.append(" - Limited Edition");
-							}
+							jQuery.each(gDecoratorAndFilters, function(decorator_index, decorator) {
+								if (!decorator.decorator_text)
+									return;
+								
+								if ( jQuery.inArray(id, decorator.ids) >= 0 ) {
+									li.append(decorator.decorator_text);
+								}
+							});
 							
 							ul.append(li);
 						});
+					
 					}
+						
+					var resultList = $("#result_list");
+					resultList.empty();
+					resultList.append("<h2>Your Missing " + spellText + "</h2>");
+					resultList.append("You have " + playerSpellList.length + " " + spellText)
+					resultList.append(ul); // Pet Result List
+					
+				
 					
 					$WowheadPower.init();
 				});
@@ -163,6 +212,21 @@
 				margin-bottom:20px;
 				text-align:center;
 			}
+			
+			
+			.horde {
+				font-weight:bold;
+				color:Red;
+			}
+		
+			.allianz {
+				font-weight:bold;
+				color:Blue;
+			}
+			
+			.newpatch {
+				font-weight:bold;
+			}
 		</style>
 	</head>
 	<body>	
@@ -173,6 +237,11 @@
 			<div class="content">
 				<b>How to Scan for Missing Pets:</b> <a href="howtoenglish.html">English</a> | <a href="howtodeutsch.html">Deutsch</a><br />
 				<br />
+				<label for="list_id">Type:</label>
+				<select id="list_id">
+					<option value="pets">Pets</option>
+					<option value="mounts">Mounts</option>
+				</select><br />
 				<textarea cols="40" rows="12" id="pet_list"></textarea> <br /> <br />
 				<input type="checkbox" value="true" id="filter_lootcards" checked="checked" /><label for="filter_lootcards">Hide lootcard pets</label>
 				<input type="checkbox" value="true" id="filter_limited" checked="checked" /><label for="filter_limited">Hide Limited Editions</label><br />

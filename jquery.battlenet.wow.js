@@ -62,7 +62,7 @@
 			loadCharacterData(options.server, options.realm, options.charname, "mounts", options.handler);
 		}
 		else if ( options.action == 'get-faction-by-race') {
-			if ( jQuery.inArray(options.race, [1,3,4,7,11,22])) {
+			if ( jQuery.inArray(options.race, [1,3,4,7,11,22]) >= 0) {
 				return "ALLIANCE";
 			} else {
 				return "HORDE";

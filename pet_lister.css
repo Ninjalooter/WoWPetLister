@@ -1,0 +1,130 @@
+/*
+	Ninja Rot: #741D1D
+	Ninja Grau: #A5A5A5
+	Ninja Schwarz: #1A1A1A
+	GitHub Footer Grau: #636363
+*/
+body {
+	background-color:#1A1A1A;
+	margin:0px;
+	
+	
+}
+#page { /* include header, content */
+	margin:auto;
+	width:960px;
+	
+	border:1px white solid;
+	background-color:#A5A5A5;
+	
+	margin-top:30px; /* margin so we get a grey top-line as well */
+	
+	padding-bottom:0px;
+}
+
+
+#header {
+	width:960px;
+	height:120px;
+	margin:auto;
+	z-index:200;
+}
+#mauer {
+	position:absolute;
+	z-index:100;
+}
+#logo {
+	z-index:200;
+	position:relative;
+	left:200px;
+	
+}
+.bar {
+	border-top:1px white solid;
+	border-bottom:1px white solid;
+	
+	margin-bottom:0px;
+	padding:4px 10px;
+	
+	position:relative;
+	bottom:0px;
+	
+	font-size:10px;
+	font-family:Tahoma, Helvetica, Geneva, Verdana, Arial, sans-serif;
+	text-align:left;
+	
+	background-color:#741D1D;
+	color:white;
+		
+	background:url(http://ninjalooter.de/blog/wp-content/themes/ninjalooter/images/red-navibackground.gif);
+	
+	height:14px;
+}
+
+.content {
+	text-align:center;
+	
+	margin:auto;
+	padding:5px;
+}
+
+#buttons {
+	padding-top:40px;
+}
+
+.footer {
+	border-top:1px white solid;
+	margin-bottom:0px;
+	margin-top:40px;
+	padding:4px 0px;
+	
+	position:relative;
+	bottom:0px;
+	
+	font-size:10px;
+	font-family:Tahoma, Helvetica, Geneva, Verdana, Arial, sans-serif;
+	text-align:center;
+	
+	background-color:#741D1D;
+	color:white;
+	
+	background:url(http://ninjalooter.de/blog/wp-content/themes/ninjalooter/images/red-navibackground.gif);
+	
+	height:14px;
+}
+
+
+
+/* Style sheets to format list entries in the result list */
+#result_list {
+	margin-top:20px;
+	width:600px;
+	text-align:left;
+	margin:auto;
+}
+
+#result_list ol {
+	margin:auto;
+}
+#result_list .horde {
+	font-weight:bold;
+	color:Red;
+}
+
+#result_list .allianz {
+	font-weight:bold;
+	color:Blue;
+}
+
+#result_list .newpatch {
+	font-weight:bold;
+}
+
+/* general html stylesheet stuff */
+.footer  a {
+	color: white;
+	font-weight:bold;
+}
+a {
+	color:black;
+}

@@ -1,5 +1,6 @@
 <html>
 	<head>
+	<title>WoW Pet Lister - How To</title>
 		<style>
 			#body {
 				width:600px;
@@ -27,7 +28,7 @@
 					<img border="0" alt="Wow Pet Lister" title="WoW Pet Lister" src="http://www.ninjalooter.de/WoWPetLister/WPL_Banner.png" alt="" width="600" height="100" />
 				</a>
 			
-				<h1>How To Scan for Missing Pets</h1>
+				<h1>Guide: How to scan for missing pets and mounts!</h1>
 			</div>
 			
 			<div id="steps">
@@ -36,9 +37,14 @@
 				</div>
 				
 				<div id="step2" class="step">
-					<h2>Step 2: Copy this macro and paste it into the chat:</h2>
+					<h2>Step 2: Copy one of the following macros fpr pets and mounts and paste it into the chat:</h2>
+					<h3>Macro for pets:</h3>
 					<div class="center" style="background-color:#A5A5A5; border:thin solid black; width: 600px; font-family:monospace">
 						/run local c,p,i='CRITTER','' for j=1,GetNumCompanions(c)do _,_,i=GetCompanionInfo(c,j) p=p..'['..i..']'end LoadAddOn'Blizzard_DebugTools'ScriptErrorsFrame:Show() ScriptErrorsFrameScrollFrameText:SetText(p)
+					</div>
+					<h3>Macro for mounts:</h3>
+					<div class="center" style="background-color:#A5A5A5; border:thin solid black; width: 600px; font-family:monospace">
+						/run local c,p,i='MOUNT','' for j=1,GetNumCompanions(c)do _,_,i=GetCompanionInfo(c,j) p=p..'['..i..']'end LoadAddOn'Blizzard_DebugTools'ScriptErrorsFrame:Show() ScriptErrorsFrameScrollFrameText:SetText(p)
 					</div>
 					<h3>Copy & Paste Tip:</h3>
 					<img style="padding: 0pt 0px 0px 0pt;" title="Copy + Paste" src="http://www.ninjalooter.de/WoWPetLister/Copy_Paste.png" /><br />
@@ -47,6 +53,7 @@
 				<div id="step3" class="step">
 					<p align="center">
 						<img style="padding: 20pt 0px 0px 0pt;" title="Step 3" src="http://www.ninjalooter.de/WoWPetLister/Guide_2_1_2.jpg" /><br />
+						<img style="padding: 20pt 0px 0px 0pt;" title="Step 3" src="http://www.ninjalooter.de/WoWPetLister/Dropdown_en.jpg" /><br />
 						<img style="padding: 20pt 0px 0px 0pt;" title="Step 4" src="http://www.ninjalooter.de/WoWPetLister/Guide_3_1_2.jpg" /><br />
 						<img style="padding: 20pt 0px 0px 0pt;" title="Step 5" src="http://www.ninjalooter.de/WoWPetLister/Guide_4_1.jpg" /><br />
 					</p>
@@ -54,7 +61,7 @@
 			</div>
 			
 			<div id="footer">
-				Presented by <a href="http://ninjalooter.de/">Ninjalooter.de</a>
+				Presented by <a href="http://ninjalooter.de/">Ninjalooter.de</a> |  <a href="http://www.ninjalooter.de/WoWPetLister/index.html">Back to Main Page</a>
 			</div>
 		</div>
 	</body>

@@ -1,6 +1,8 @@
 ﻿<html>
 	<head>
-	<title>WoW Pet Lister - Ninjalooter</title>
+		<title>WoW Pet Lister - Ninjalooter</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+		
 		<script src="jquery.1.6.1.js"></script>
 		<script src="jquery.cookie.js"></script>
 		<script src="jquery.battlenet.wow.js"></script>
@@ -11,14 +13,14 @@
 			var g_spells = [];
 			var g_items = [];
 		</script>
-		<script src="pet_lister.companions.js"></script>
+		<script src="pet_lister.companions.js" charset="latin1"></script>
 		<script>
 			gPetSpells = g_spells; // Store globally
 			
 			// Reset g_spells
 			g_spells = [];
 		</script>
-		<script src="pet_lister.mounts.de.js"></script>
+		<script src="pet_lister.mounts.de.js" charset="latin1"></script>
 		<script>
 			gMountSpells = g_spells; // Store globally
 		</script>
@@ -74,8 +76,8 @@
 					});
 					// Process Faction Filters
 					var charFaction = $.battlenet({'action':'get-faction-by-race', 'race':raceId});
-					var factionSpellIds = charFaction == "ALLIANCE" ? gRaceAllianceIds : gRaceHordeIds;
-					var otherFactionSpellIds = charFaction == "HORDE" ? gRaceAllianceIds : gRaceHordeIds;
+					var factionSpellIds = (charFaction == "ALLIANCE" ? gRaceAllianceIds : gRaceHordeIds);
+					var otherFactionSpellIds = (charFaction == "HORDE" ? gRaceAllianceIds : gRaceHordeIds);
 					
 					if ( $("#filter_ownfactionspells").prop("checked") ) {
 						missingSpells = jQuery.grep(missingSpells, function(spell, index) {
@@ -107,7 +109,7 @@
 								tr.append($("<td></td>").append(img));
 							}
 							
-							tr.append($("<td><a href=\"" + wowhead_spellurl(id) + "\">" + name + "</a></td>"));
+							tr.append($("<td></td>").append($("<a href=\"" + wowhead_spellurl(id) + "\"></a>").text(name)));
 							
 							jQuery.each(gDecoratorAndFilters, function(decorator_index, decorator) {
 								if (!decorator.decorator_text)
@@ -171,10 +173,11 @@
 						realm: sRealm,
 						charname: sChar,
 						handler: function(character) {
+							var result = $("#result_list");
 							if (filterType == "companions") {
-								$("#result_list").pet_lister(character.companions, character.race, gPetSpells);
+								result.pet_lister(character.companions, character.race, gPetSpells);
 							} else {
-								$("#result_list").pet_lister(character.mounts, character.race, gMountSpells);
+								result.pet_lister(character.mounts, character.race, gMountSpells);
 							}
 							if ( window.$WowheadPower && $WowheadPower.init ) {
 								$WowheadPower.init();

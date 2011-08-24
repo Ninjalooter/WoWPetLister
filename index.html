@@ -144,13 +144,12 @@
 				
 				// Load cookie data
 				$("#region").val($.cookie('pet_lister_region'));
-				$("#realm").val($.cookie('pet_lister_realm'));
 				$("#charname").val($.cookie('pet_lister_char'));
 				
 				// Fetch initial realm list
 				$("#region").change(function() {
 					var sRegion = $(this).val();
-					$("#realm").battlenet({action: 'fill-with-realms', region: sRegion});
+					$("#realm").battlenet({action: 'fill-with-realms', region: sRegion, selected: $.cookie('pet_lister_realm')});
 				}).change();
 				
 				// On Button Click
@@ -188,7 +187,7 @@
 			});
 		</script>
 		
-		<!-- <script type="text/javascript" src="http://static.wowhead.com/widgets/power.js"></script> -->
+		<script type="text/javascript" src="http://static.wowhead.com/widgets/power.js"></script>
 		<link rel="stylesheet" type="text/css" media="all" href="pet_lister.css">
 	</head>
 	<body>	
@@ -224,7 +223,7 @@
 					<input type="checkbox" value="true" id="filter_blizzcoll" checked="checked" /><label for="filter_blizzcoll">Hide Blizzard Collectables</label>
 					<input type="checkbox" value="true" id="filter_blizzshop" checked="checked" /><label for="filter_blizzshop">Hide Blizzard Shop</label><br />
 					
-					<input type="checkbox" value="true" id="filter_ownfactionspells" /><label for="filter_ownfactionspells">Hide my faction</label><br />
+					<input type="checkbox" value="true" id="filter_ownfactionspells" /><label for="filter_ownfactionspells">Hide my faction</label>
 					<input type="checkbox" value="true" id="filter_otherfactionspells" checked="checked" /><label for="filter_otherfactionspells">Hide other faction</label><br />
 					
 					<input type="checkbox" value="true" id="filter_classmounts" checked="checked" /><label for="filter_classmounts">Hide Class Mounts</label><br />

@@ -10,7 +10,13 @@
 	function loadCharacterData(server, realm, character, fields, handler) {
 		var charUrl = ("https:" === document.location.protocol ? "https" : "http")+ "://" + server + "/api/wow/character/" + realm + "/" + encodeURIComponent(character);
 		charUrl += "?fields=" + fields;
-		$.getJSON(charUrl, handler);
+		$.ajax({
+			url: charUrl,
+			type:"GET",
+			dataType:"jsonp",
+			'jsonp':'jsonp',
+			success: handler
+		});
 	}
 	
 	/* Public methods */
@@ -25,12 +31,22 @@
 				
 				var realmsUrl = ("https:" === document.location.protocol ? "https" : "http")+ "://" + options.region + "/api/wow/realm/status";
 				
-				$.getJSON(realmsUrl, function(data) {
-					select.empty();
-					jQuery.each(data.realms, function(i, realm) {
-						select.append($("<option value=\"" + realm.slug + "\">" + realm.name + "</option>"));
-					});
-					select.removeAttr('disabled');
+				$.ajax({
+					url: realmsUrl,
+					type:"GET",
+					dataType:"jsonp",
+					'jsonp':'jsonp',
+					success: function(data) {
+						select.empty();
+						jQuery.each(data.realms, function(i, realm) {
+							var opt = $("<option value=\"" + realm.slug + "\">" + realm.name + "</option>");
+							if ( options.selected == realm.slug ) {
+								opt.attr("selected", "selected");
+							}
+							select.append(opt);
+						});
+						select.removeAttr('disabled');
+					}
 				});
 			});
 		}
@@ -65,6 +81,7 @@
 	};
 	$.fn.battlenet.defaults = {
 		'action': 'fill-with-realms',
-		'region': undefined
+		'region': undefined,
+		'selected': undefined
 	};
 })(jQuery);

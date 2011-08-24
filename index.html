@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 	<head>
 	<title>WoW Pet Lister - Ninjalooter</title>
 		<script src="jquery.1.6.1.js"></script>
@@ -321,71 +321,174 @@
 				
 			});
 		</script>
-		<script type="text/javascript" src="http://static.wowhead.com/widgets/power.js"></script>
+		<!-- <script type="text/javascript" src="http://static.wowhead.com/widgets/power.js"></script> -->
 		
 		<style>
-			.center{
-				margin:auto;
+			/*
+				Ninja Rot: #741D1D
+				Ninja Grau: #A5A5A5
+				Ninja Schwarz: #1A1A1A
+				GitHub Footer Grau: #636363
+			*/
+			body {
+				background-color:#1A1A1A;
+				margin:0px;
+				
+				
 			}
+			#page { /* include header, content */
+				margin:auto;
+				width:960px;
+				
+				border:1px white solid;
+				background-color:#A5A5A5;
+				
+				margin-top:30px; /* margin so we get a grey top-line as well */
+				
+				padding-bottom:0px;
+			}
+			
 			
 			#header {
+				width:960px;
+				height:120px;
+				margin:auto;
+				z-index:200;
 			}
+			#mauer {
+				position:absolute;
+				z-index:100;
+			}
+			#logo {
+				z-index:200;
+				position:relative;
+				left:200px;
+				
+			}
+			#nav {
+				border-top:1px white solid;
+				border-bottom:1px white solid;
+				
+				margin-bottom:0px;
+				padding:4px 10px;
+				
+				position:relative;
+				bottom:0px;
+				
+				font-size:10px;
+				font-family:Tahoma, Helvetica, Geneva, Verdana, Arial, sans-serif;
+				text-align:left;
+				
+				background-color:#741D1D;
+				color:white;
+					
+				background:url(http://ninjalooter.de/blog/wp-content/themes/ninjalooter/images/red-navibackground.gif);
+				
+				height:14px;
+			}
+			
 			.content {
 				text-align:center;
+				
+				margin:auto;
+				padding:5px;
 			}
+			
+			#buttons {
+				padding-top:40px;
+			}
+			
 			.footer {
-				margin-top:30px;
-				margin-bottom:20px;
+				border-top:1px white solid;
+				margin-bottom:0px;
+				margin-top:40px;
+				padding:4px 0px;
+				
+				position:relative;
+				bottom:0px;
+				
+				font-size:10px;
+				font-family:Tahoma, Helvetica, Geneva, Verdana, Arial, sans-serif;
 				text-align:center;
+				
+				background-color:#741D1D;
+				color:white;
+					
+				background:url(http://ninjalooter.de/blog/wp-content/themes/ninjalooter/images/red-navibackground.gif);
+				
+				height:14px;
 			}
 			
 			
-			.horde {
+			
+			/* Style sheets to format list entries in the result list */
+			#result_list .horde {
 				font-weight:bold;
 				color:Red;
 			}
 		
-			.allianz {
+			#result_list .allianz {
 				font-weight:bold;
 				color:Blue;
 			}
 			
-			.newpatch {
+			#result_list .newpatch {
+				font-weight:bold;
+			}
+			
+			/* general html stylesheet stuff */
+			a {
+				color: white;
 				font-weight:bold;
 			}
 		</style>
 	</head>
 	<body>	
-		<div style="width:600px" class="center">
+		<div id="page">
 			<div id="header">
-				<img style="padding: 20pt 0px 0px 0pt;" title="WoW Pet Lister" src="WPL_Banner.png" alt="" width="600" height="100" />
+				<img id="mauer" src="http://ninjalooter.de/blog/wp-content/uploads/2010/08/Ninjalooter_Header_Mauer1.jpg" width="960" height="120" />
+				<img id="logo" class="center" title="WoW Pet Lister" src="WPL_Banner.png" alt="" width="600" height="100" />
 			</div>			
+			<div id="nav">
+				Version 1.1
+			</div>
 			<div class="content">
-				<b>How to Scan for Missing Pets:</b> <a href="howtoenglish.html">English</a> | <a href="howtodeutsch.html">Deutsch</a><br />
-				<br />
-				<label for="list_id">Type:</label>
-				<select id="list_id">
-					<option value="pets">Pets</option>
-					<option value="mounts">Mounts</option>
-				</select><br />
-				<textarea cols="40" rows="12" id="pet_list"></textarea> <br /> <br />
-				<input type="checkbox" value="true" id="filter_lootcards" checked="checked" /><label for="filter_lootcards">Hide Trading Card Game Pets</label>
-				<input type="checkbox" value="true" id="filter_limited" checked="checked" /><label for="filter_limited">Hide Limited Editions</label><br />
-				<input type="checkbox" value="true" id="filter_blizzcoll" checked="checked" /><label for="filter_blizzcoll">Hide Blizzard Collectables</label>
-				<input type="checkbox" value="true" id="filter_blizzshop" checked="checked" /><label for="filter_blizzshop">Hide Blizzard Shop</label><br />
-				<input type="checkbox" value="true" id="filter_horde" checked="checked" /><label for="filter_horde">Hide Horde</label>
-				<input type="checkbox" value="true" id="filter_alliance" checked="checked" /><label for="filter_alliance">Hide Alliance</label>
-				<input type="checkbox" value="true" id="filter_classmounts" checked="checked" /><label for="filter_classmounts">Hide Class Mounts</label><br />
-				<button id="btn_scan"><img alt="Click to list your missing pets." title="Scan!" style="padding: 0pt 0px 0px 0pt;" src="scan_button4.png"/></button><br />
+				<h1>Charakter</h1>
+				<div>
+					<select>
+						<option value="eu.battle.net">Europe</option>
+						<option value="us.battle.net">US</option>
+					</select>
+					<select id="realm">
+						<option>Der absyssische Rat</option>
+					</select>
+					<input type="text" id="charname" />
+				</div>
+				
+				<h2>Filter</h2>
+				<div>
+					<input type="checkbox" value="true" id="filter_lootcards" checked="checked" /><label for="filter_lootcards">Hide Trading Card Game Pets</label>
+					<input type="checkbox" value="true" id="filter_limited" checked="checked" /><label for="filter_limited">Hide Limited Editions</label><br />
+					<input type="checkbox" value="true" id="filter_blizzcoll" checked="checked" /><label for="filter_blizzcoll">Hide Blizzard Collectables</label>
+					<input type="checkbox" value="true" id="filter_blizzshop" checked="checked" /><label for="filter_blizzshop">Hide Blizzard Shop</label><br />
+					<input type="checkbox" value="true" id="filter_horde" checked="checked" /><label for="filter_horde">Hide Horde</label>
+					<input type="checkbox" value="true" id="filter_alliance" checked="checked" /><label for="filter_alliance">Hide Alliance</label>
+					<input type="checkbox" value="true" id="filter_classmounts" checked="checked" /><label for="filter_classmounts">Hide Class Mounts</label><br />
+				</div>
+				<div id="buttons">
+					<button id="btn_scan"><img alt="Click to list your missing pets." title="Scan!" style="padding: 0pt 0px 0px 0pt;" src="scan_button4.png"/></button>
+				</div>
+				
+			
+				<div id="result_list">
+				
+				</div>
+				
 			</div>
-			
-			<div id="result_list"></div>
-			
-			
+
 			<div class="footer">
-				Presented by <a href="http://ninjalooter.de/">Ninjalooter.de</a> | Database <a href="http://de.wowhead.com/">wowhead.com</a>
+				Presented by <a href="http://ninjalooter.de/">Ninjalooter.de</a> | Database <a href="http://de.wowhead.com/">wowhead.com</a> | Characterdata from <a href="http://blizzard.github.com/api-wow-docs/">battle.net</a>
 			</div>
-			
 		</div>
 		
 		<script type="text/javascript">//<![CDATA[

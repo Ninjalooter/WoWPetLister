@@ -1,0 +1,18 @@
+____Allianz_____
+
+Menschen - Súri -> Rasse: 1
+Zwerg - Émmie -> Rasse: 3
+Nachtelf - Márla -> Rasse: 4
+Gnom - Linnea -> Rasse: 7
+Draenei - Andarya -> Rasse: 11
+Worgen - Limara -> Rasse: 22
+
+
+____Horde_______
+
+Orc - Linnea (Uldum) -> Rasse: 2
+Untot - Marla (Garona) -> Rasse: 5
+Taure - Cala (Shattrath) -> Rasse: 6
+Troll - Marla (Gul'dan) -> Rasse: 8
+Goblin - Samirah (Shattrath) -> Rasse: 9
+Blutelf - Sâluna -> Rasse: 10

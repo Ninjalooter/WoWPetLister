@@ -28,6 +28,7 @@
 		
 		
 		<script>
+			/* use strict; */
 			function filterSpellIdListe(aListe, spells) {
 				var spells = jQuery.grep(spells, function(spell, spellId) {
 					return spell && jQuery.inArray(spellId, aListe) == -1;
@@ -36,8 +37,8 @@
 			}
 			
 			function wowhead_spellicon(spell) {
-				if ( spell.icon ) {
-					return "http://static.wowhead.com/images/wow/icons/small/" + spell.icon + ".jpg";  
+				if (spell.icon) {
+					return "http://static.wowhead.com/images/wow/icons/large/" + spell.icon + ".jpg";  
 				}
 				return "";
 			}
@@ -51,7 +52,7 @@
 					
 					var spellText;
 					
-					if ( $("#list_id").val() == "companions" ) {
+					if ($("#list_id").val() == "companions") {
 						spellText = "pets";
 					} else {
 						spellText = "mounts";
@@ -63,11 +64,11 @@
 					
 					// Process all filters
 					jQuery.each(gDecoratorAndFilters, function(index, value) { 
-						if ( !value.filter_element_id )
+						if (!value.filter_element_id)
 							return;
 						
 						// Check if the filter is 'checked'
-						if ( $(value.filter_element_id).prop("checked") ) {
+						if (!$(value.filter_element_id).prop("checked")) {
 							// Filter all ids from that list
 							missingSpells = jQuery.grep(missingSpells, function(spell, index) {
 								return jQuery.inArray(spell.id, value.ids) == -1;
@@ -79,12 +80,12 @@
 					var factionSpellIds = (charFaction == "ALLIANCE" ? gRaceAllianceIds : gRaceHordeIds);
 					var otherFactionSpellIds = (charFaction == "HORDE" ? gRaceAllianceIds : gRaceHordeIds);
 					
-					if ( $("#filter_ownfactionspells").prop("checked") ) {
+					if (!$("#filter_ownfactionspells").prop("checked")) {
 						missingSpells = jQuery.grep(missingSpells, function(spell, index) {
 							return jQuery.inArray(spell.id, factionSpellIds.ids) == -1;
 						});
 					}
-					if ( $("#filter_otherfactionspells").prop("checked") ) {
+					if (!$("#filter_otherfactionspells").prop("checked")) {
 						missingSpells = jQuery.grep(missingSpells, function(spell, index) {
 							return jQuery.inArray(spell.id, otherFactionSpellIds.ids) == -1;
 						});
@@ -96,37 +97,55 @@
 					if ( missingSpells.length == 0 ) {
 						table.append("<tr><td>You have everything!</td></tr>");
 					} else {
+						var currentTr = undefined;
+						var tdCounter = 0;
 						jQuery.each(missingSpells, function(index, value) {
 							var id = value.id;
 							var name = value.name_dede;
+							var spellUrl = wowhead_spellurl(id);
 							
-							var tr = $("<tr></tr>");
-							var spellIcon = wowhead_spellicon(value);
-							if (spellIcon) {
+							if (currentTr == undefined) {
+								currentTr = $("<tr></tr>").appendTo(table);
+							}
+							var td = $("<td></td>");
+							currentTr.append(td);
+							
+							var container = $("<div class='item'></div>").appendTo(td);
+							
+							var spellIconUrl = wowhead_spellicon(value);
+							if (spellIconUrl) {
 								var img = $("<img />");
 								img.attr("border", "0");
-								img.attr("src", spellIcon);
-								tr.append($("<td></td>").append(img));
+								img.attr("src", spellIconUrl);
+								container.append($("<a></a>").append(img).attr("href", spellUrl)).append("<br />");
 							}
 							
-							tr.append($("<td></td>").append($("<a href=\"" + wowhead_spellurl(id) + "\"></a>").text(name)));
+							
+							container.append($("<a></a>").attr("href", spellUrl).text(name)).append("<br />");
 							
 							jQuery.each(gDecoratorAndFilters, function(decorator_index, decorator) {
-								if (!decorator.decorator_text)
+								if (!decorator.decorator_text) {
 									return;
+								}
 								
-								if ( jQuery.inArray(id, decorator.ids) >= 0 ) {
-									tr.append($("<td>" + decorator.decorator_text + "</td>"));
+								if (jQuery.inArray(id, decorator.ids) >= 0) {
+									container.append($("<span>" + decorator.decorator_text + "</span><br />"));
 								}
 							});
-							table.append(tr);
+							// Close the row after 4 spells
+							tdCounter++;
+							if (tdCounter == 4) {
+								tdCounter = 0;
+								currentTr = undefined;
+							}
+							
 						});
 					}
 						
 					
 					element.empty();
 					// resultList.append("You have " + playerSpellList.length + " " + spellText)
-					element.append($("<h2>You have " + playerSpellList.length + " " + spellText + " | Your Missing " + spellText + ": </h2>"));
+					element.append($("<h2>You have " + playerSpellList.length + " " + spellText + " | Your Missing " + spellText + " (" + missingSpells.length + "): </h2>"));
 					element.append(table); // Pet Result List
 				});
 			};
@@ -159,7 +178,7 @@
 					var sRegion = $("#region").val();
 					var sRealm = $("#realm").val();
 					var sChar = $("#charname").val();
-					var filterType = $("#list_id").val();
+					var filterType = $("input[name='typ']:checked").val();
 					
 					// Store values in cookie for page reload
 					$.cookie('pet_lister_region', sRegion);
@@ -200,11 +219,11 @@
 				<img id="logo" class="center" title="WoW Pet Lister" src="WPL_Banner.png" alt="" width="600" height="100" />
 			</div>			
 			<div id="nav" class="bar">
-				Version 1.1
+				Version 1.1.1
 			</div>
 			<div class="content">
-				<h1>Charakter</h1>
 				<div>
+					<label for="charname">Charakter:</label>
 					<select id="region">
 						<option value="eu.battle.net">EU</option>
 						<option value="us.battle.net">US</option>
@@ -218,18 +237,44 @@
 					<input type="text" id="charname" />
 				</div>
 				
-				<h2>Filter</h2>
-				<div>	
-					<select id="list_id"><option value="companions">Pets</option><option value="mounts">Mounts</option></select><br />
-					<input type="checkbox" value="true" id="filter_lootcards" checked="checked" /><label for="filter_lootcards">Hide Trading Card Game Pets</label>
-					<input type="checkbox" value="true" id="filter_limited" checked="checked" /><label for="filter_limited">Hide Limited Editions</label><br />
-					<input type="checkbox" value="true" id="filter_blizzcoll" checked="checked" /><label for="filter_blizzcoll">Hide Blizzard Collectables</label>
-					<input type="checkbox" value="true" id="filter_blizzshop" checked="checked" /><label for="filter_blizzshop">Hide Blizzard Shop</label><br />
+				<div style="padding-top:10px">	
+					<table style="border:1px black solid; margin:auto;">
+						<cols>
+							<col width="150" />
+							<col width="150" />
+							<col width="200" />
+							<col width="150" />
+						</cols>
+						<tr>
+							<td>
+								Typ:
+							</td>
+							<td colspan="2">
+								Ursprung:
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" rowspan="3">
+								<input type="radio" name="typ" id="type_companions" value="companions" checked="checked"> <label for="type_companions">Haustiere</label><br />
+								<input type="radio" name="typ" id="type_mounts" value="mounts"> <label for="type_mounts">Reittiere</label><br />
+							</td>
+							<td><input type="checkbox" value="true" id="filter_ownfactionspells" checked="checked" /><label for="filter_ownfactionspells">Eigene Fraktion</label></td>
+							
+							<td><input type="checkbox" value="true" id="filter_lootcards" /><label for="filter_lootcards">Trading Card Game Pets</label></td>
+							<td><input type="checkbox" value="true" id="filter_limited" /><label for="filter_limited">Limited Editions</label></td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" value="true" id="filter_otherfactionspells" /><label for="filter_otherfactionspells">Gegn. Fraktion</label></td>
+							
+							<td><input type="checkbox" value="true" id="filter_blizzcoll" /><label for="filter_blizzcoll">Blizzard Collectables</label></td>
+							<td><input type="checkbox" value="true" id="filter_blizzshop" /><label for="filter_blizzshop">Blizzard Shop</label></td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" value="true" id="filter_classmounts" /><label for="filter_classmounts">Class Mounts</label></td>
+						</tr>
+					</table>
 					
-					<input type="checkbox" value="true" id="filter_ownfactionspells" /><label for="filter_ownfactionspells">Hide my faction</label>
-					<input type="checkbox" value="true" id="filter_otherfactionspells" checked="checked" /><label for="filter_otherfactionspells">Hide other faction</label><br />
 					
-					<input type="checkbox" value="true" id="filter_classmounts" checked="checked" /><label for="filter_classmounts">Hide Class Mounts</label><br />
 				</div>
 				<div id="buttons">
 					<button id="btn_scan"><img alt="Click to list your missing pets." title="Scan!" style="padding: 0pt 0px 0px 0pt;" src="scan_button4.png"/></button>

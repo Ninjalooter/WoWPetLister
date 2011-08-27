@@ -1,0 +1,4 @@
+
+
+
+Prefix Avatar URL: "http://eu.battle.net/static-render/eu/" + character.thumbnail

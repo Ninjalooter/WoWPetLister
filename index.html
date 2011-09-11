@@ -28,19 +28,18 @@
 		
 		
 		<script>
-			"use strict";
 			function filterSpellIdListe(playerList, spellIDList) {
 				if ( gBlacklist ) {
 					// Filter certain IDs completly
-					spellIDList = jQuery.grep(spellIDList, function(spell, spellId) {
-						return spell && jQuery.inArray(spellId, gBlacklist) == -1;
+					spellIDList = jQuery.grep(spellIDList, function(spell, _index) {
+						return spell && jQuery.inArray(spell.id, gBlacklist) == -1;
 					});
 				}
 				// Filter out the spells from list spellIDList which the player does not have
-				var spells = jQuery.grep(spellIDList, function(spell, spellId) {
-					return spell && jQuery.inArray(spellId, playerList) == -1;
+				return jQuery.grep(spellIDList, function(spell, _index) {
+					return spell && jQuery.inArray(spell.id, playerList) == -1;
 				});
-				return spells;
+				
 			}
 			
 			function wowhead_spellicon(spell) {
@@ -152,7 +151,7 @@
 					
 					element.empty();
 					// resultList.append("You have " + playerSpellList.length + " " + spellText)
-					element.append($("<h2>Du hast " + playerSpellList.length + " " + spellText + " - Dir fehlen "+ missingSpells.length + " " + spellText + "</h2>"));
+					element.append($("<h2>Du hast " + playerSpellList.length + " " + spellText + " - Dir fehlen "+ missingSpells.length + " " + spellText + ":</h2>"));
 					element.append(table); // Pet Result List
 				});
 			};

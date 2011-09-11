@@ -28,10 +28,17 @@
 		
 		
 		<script>
-			/* use strict; */
-			function filterSpellIdListe(aListe, spells) {
-				var spells = jQuery.grep(spells, function(spell, spellId) {
-					return spell && jQuery.inArray(spellId, aListe) == -1;
+			"use strict";
+			function filterSpellIdListe(playerList, spellIDList) {
+				if ( gBlacklist ) {
+					// Filter certain IDs completly
+					spellIDList = jQuery.grep(spellIDList, function(spell, spellId) {
+						return spell && jQuery.inArray(spellId, gBlacklist) == -1;
+					});
+				}
+				// Filter out the spells from list spellIDList which the player does not have
+				var spells = jQuery.grep(spellIDList, function(spell, spellId) {
+					return spell && jQuery.inArray(spellId, playerList) == -1;
 				});
 				return spells;
 			}
@@ -170,7 +177,12 @@
 				// Fetch initial realm list
 				$("#region").change(function() {
 					var sRegion = $(this).val();
-					$("#realm").battlenet({action: 'fill-with-realms', region: sRegion, selected: $.cookie('pet_lister_realm')});
+					$("#realm").battlenet({
+						action: 'fill-with-realms', 
+						region: sRegion, 
+						selected: 
+						$.cookie('pet_lister_realm')
+					});
 				}).change();
 				
 				// On Button Click

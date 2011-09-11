@@ -7,9 +7,13 @@
 body {
 	background-color:#1A1A1A;
 	margin:0px;
-	
-	
 }
+
+.guide {
+	font-weight:bold;
+	color: #741D1d;
+}
+
 #page { /* include header, content */
 	margin:auto;
 	width:960px;

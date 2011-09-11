@@ -60,9 +60,9 @@
 					var spellText;
 					
 					if ($("input[name='typ']:checked").val() == "companions") {
-						spellText = "pets";
+						spellText = "Haustiere";
 					} else {
-						spellText = "mounts";
+						spellText = "Reittiere";
 					}
 					
 					var missingSpells = filterSpellIdListe(playerSpellList, spellIdList);
@@ -102,7 +102,7 @@
 					// Prepare output list
 					var table = $("<table></table>");
 					if ( missingSpells.length == 0 ) {
-						table.append("<tr><td>You have everything!</td></tr>");
+						table.append("<tr><td>Du hast alles!</td></tr>");
 					} else {
 						var currentTr = undefined;
 						var tdCounter = 0;
@@ -152,7 +152,7 @@
 					
 					element.empty();
 					// resultList.append("You have " + playerSpellList.length + " " + spellText)
-					element.append($("<h2>You have " + playerSpellList.length + " " + spellText + " | Your Missing " + spellText + " (" + missingSpells.length + "): </h2>"));
+					element.append($("<h2>Du hast " + playerSpellList.length + " " + spellText + " - Dir fehlen "+ missingSpells.length + " " + spellText + "</h2>"));
 					element.append(table); // Pet Result List
 				});
 			};
@@ -237,7 +237,7 @@
 				<img id="logo" class="center" title="WoW Pet Lister" src="WPL_Banner.png" alt="" width="600" height="100" />
 			</div>			
 			<div id="nav" class="bar">
-				Version 1.1.1
+				Version 1.1.2
 			</div>
 			<div class="content">
 				<div>
@@ -250,7 +250,7 @@
 						<option value="battlenet.com.cn">CN</option>
 					</select>
 					<select id="realm">
-						<option>Please wait</option>
+						<option>Bitte warten</option>
 					</select>
 					<input type="text" id="charname" />
 				</div>
@@ -288,14 +288,14 @@
 							<td><input type="checkbox" value="true" id="filter_blizzshop" /><label for="filter_blizzshop">Blizzard Shop</label></td>
 						</tr>
 						<tr>
-							<td><input type="checkbox" value="true" id="filter_classmounts" /><label for="filter_classmounts">Class Mounts</label></td>
+							<td><input type="checkbox" value="true" id="filter_classmounts" /><label for="filter_classmounts">Klassen Mounts</label></td>
 						</tr>
 					</table>
 					
 					
 				</div>
 				<div id="buttons">
-					<button id="btn_scan"><img alt="Click to list your missing pets." title="Scan!" style="padding: 0pt 0px 0px 0pt;" src="scan_button4.png"/></button>
+					<button id="btn_scan"><img alt="Scannen." title="Scannen!" style="padding: 0pt 0px 0px 0pt;" src="scan_button4.png"/></button>
 				</div>
 				
 			
@@ -306,7 +306,7 @@
 			</div>
 
 			<div class="footer">
-				Presented by <a href="http://ninjalooter.de/">Ninjalooter.de</a> | Database <a href="http://de.wowhead.com/">wowhead.com</a> | Characterdata from <a href="http://blizzard.github.com/api-wow-docs/">battle.net</a>
+				Von <a href="http://ninjalooter.de/">Ninjalooter.de</a> | Databank <a href="http://de.wowhead.com/">wowhead.com</a> | Charakterdaten von <a href="http://blizzard.github.com/api-wow-docs/">battle.net</a>
 			</div>
 		</div>
 		

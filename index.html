@@ -52,7 +52,7 @@
 					
 					var spellText;
 					
-					if ($("#list_id").val() == "companions") {
+					if ($("input[name='typ']:checked").val() == "companions") {
 						spellText = "pets";
 					} else {
 						spellText = "mounts";
@@ -174,7 +174,7 @@
 				}).change();
 				
 				// On Button Click
-				$("#btn_scan").click(function() {
+				var searchFunction = function() {
 					var sRegion = $("#region").val();
 					var sRealm = $("#realm").val();
 					var sChar = $("#charname").val();
@@ -205,6 +205,12 @@
 					});
 					
 					
+				};
+				$("#btn_scan").click(searchFunction);
+				$("#charname").keypress(function(event) {
+					if (event.which == 13 ) {
+						searchFunction();
+					}
 				});
 			});
 		</script>

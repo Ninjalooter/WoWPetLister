@@ -1,7 +1,14 @@
-﻿// Andarya
-// 458,470,472,6648,6777,6898,6899,8394,10789,10793,10873,10969,17229,17453,17454,22717,22719,22720,22723,23219,23221,23222,23223,23225,23227,23228,23229,23238,23239,23240,23338,23510,25953,26055,26056,32235,32239,32240,32242,32289,32290,32292,34406,34896,34897,34898,34899,35710,35711,35712,35713,35714,39315,39317,39318,39319,39798,39800,39801,39802,39803,41513,41514,41515,41516,41517,41518,43900,43927,48027,54753,59569,59570,59785,59791,59961,60002,60024,60025,60114,60118,61229,61294,61425,61996,63963,65637,65638,65640,65642,65643,67466,72808,75207,75614,84751,88741,88748,88749,88990,90621,92155,98727
+﻿// Which Spells to ignore completly?
+var gBlacklist = [
+	/* spellIds */
+	89520, 
+	50869
+];
 
-var gBlacklist = [89520, 50869];
+// Text to show in the popup for a Pet / Mount
+var gDescriptions = {
+	100684: 'Hallo <b>Welt!</b> Mehr Infos gibt\'s in diesem <a target="_new" href="http://ninjalooter.de/meine-pets">diesem Artikel</a>.'
+};
 
 var gRaceHordeIds = {
 	// HORDE
@@ -30,6 +37,8 @@ var gRaceAllianceIds = {
 var gDecoratorAndFilters = [
 	gRaceHordeIds, // Only decorator, no filter
 	gRaceAllianceIds, // Only decorator, no filter
+	
+	//Filter Kategorien
 	{
 		name: "Lootcard pets",
 		ids: [68810, 49964, 40549, 93624, 96819, 96817, 45127, 30156, 45125, 68767,
@@ -75,6 +84,7 @@ var gDecoratorAndFilters = [
 		decorator_text: "Klassenmount"
 	},
 
+	//Argentumturnier, Feiertage, Events
 		{
 		name: "Argent Tournament/Argentumturnier",
 		ids: [63844, 66087, 66906, 66088, 67466, 63635, 63637, 63639, 63643, 63638, 63636, 63640, 66090, 63642, 63232, 63641, 65641, 66091, 65637, 65646, 65640, 65638,
@@ -88,11 +98,12 @@ var gDecoratorAndFilters = [
 		name: "Event/Feiertage",
 		ids: [49379, 71342, 48025, 43900,
 		26045, 26529, 26533, 26541, 27570, 28738, 28739, 28740, 28871, 39709, 40613, 40614, 40634, 42609, 44369, 61725, 61773, 65381, 65382, 71840, 74932, 93817,
-		98079, 23811],
+		98079, 23811, 100330, 100684],
 		
 		decorator_text: "Event/Feiertage"
 	},
 
+	//Berufe
 		{
 		name: "Engineering/Ingenieurskunst",
 		ids: [15048, 15049, 19772, 26010, 81937, 82173, 44151, 44153, 55531, 60424, 4055],
@@ -136,6 +147,14 @@ var gDecoratorAndFilters = [
 	},
 	
 		{
+		name: "Fishing/Angeln",
+		ids: [46425, 46426, 62561, 43697, 43698, 64731, 33050, 59250],
+		
+		decorator_text: "Angeln"
+	},
+	
+	//Dungeons, Raids, Erfolge, Ruf
+		{
 		name: "Dungeon/Raid",
 		ids: [101542, 98204, 97493, 96499, 96491, 88746, 88744, 88742, 72286, 69395, 63796, 59996, 59650, 59571, 59567, 41252, 40192, 17481, 26054, 25953, 26055, 26056,
 		59569, 43918, 46599, 15999, 16450, 61465, 61467],
@@ -165,7 +184,8 @@ var gDecoratorAndFilters = [
 		
 		decorator_text: "PvP"
 	},
-
+	
+	//Quests, Drop, Händler
 	{
 		name: "Quest",
 		ids: [12243, 13548, 39181, 65046, 78683, 78685, 93813, 93823, 96571, 97779, 73313, 75207, 17229, 64659, 101986, 101989],
@@ -181,13 +201,6 @@ var gDecoratorAndFilters = [
 	},
 
 	{
-		name: "Fishing/Angeln",
-		ids: [46425, 46426, 62561, 43697, 43698, 64731, 33050, 59250],
-		
-		decorator_text: "Angeln"
-	},
-
-	{
 		name: "Merchant/H&auml;ndler",
 		ids: [10673, 10674, 10676, 10677, 10678, 10679, 10680, 10683, 10684, 10685, 10688, 10703, 10704, 10706, 10707, 10711, 10713, 10714, 10716, 10717, 10709, 35156,
 		35239, 35907, 35909, 35910, 35911, 36027, 36028, 36029, 36031, 53316, 65046, 65358, 75134, 92395, 92396, 92397, 92398, 97638, 59791, 59799, 60114, 61229, 61425, 61470, 90621,
@@ -199,6 +212,7 @@ var gDecoratorAndFilters = [
 		decorator_text: "H&auml;ndler"
 	},
 	
+	//Unbekannte Herkunft
 	{
 		name: "Unknown",
 		ids: [89931, 89929, 89930, 93815, 93818, 87863, 93461,
@@ -207,11 +221,76 @@ var gDecoratorAndFilters = [
 		decorator_text: "Herkunft bisher unbekannt"
 	},
 	
+	//Guides
 		{
 		name: "Graues Reitkamel",
 		ids: [88750],
 		
 		decorator_text: "<a class=\"guide\" href=\"http://ninjalooter.de/15016/wow-dormus-und-das-graue-reitkamel/\">[Guide]</a>"
+	},
+	
+		{
+		name: "Katzenfamiliar, Unheimliche Kiste und Kopfloser Reiter",
+		ids: [100330, 100684, 48025],
+		
+		decorator_text: "<a class=\"guide\" href=\"http://ninjalooter.de/25882/wow-schlotternachte-guide-2011-gruselstunde-in-azeroth/\">[Guide]</a>"
+	},
+	
+		{
+		name: "Klein Tarecgosa",
+		ids: [100576],
+		
+		decorator_text: "<a class=\"guide\" href=\"http://ninjalooter.de/20564/wow-how-to-dragonwrath-die-komplette-quest-reihe-rund-um-drachenzorn/\">[Guide]</a>"
+	},
+	
+		{
+		name: "Sandsteindrache - Phiole der Sande",
+		ids: [93326],
+		
+		decorator_text: "<a class=\"guide\" href=\"http://ninjalooter.de/15039/wow-phiole-der-sande-nun-fur-alle-helden-azeroths/\">[Guide]</a>"
+	},
+	
+	{
+		name: "Wächterjunges",
+		ids: [98736],
+		
+		decorator_text: "<a class=\"guide\" href=\"http://ninjalooter.de/26994/wow-handelbares-wachterjunges-mischt-azeroths-auktionshauser-auf/\">[Guide]</a>"
+	},
+	
+	//BlizzCon
+	{
+		name: "BlizzCon 2005",
+		ids: [24696],
+		
+		decorator_text: "BlizzCon 2005"
+	},
+	
+	{
+		name: "BlizzCon 2008",
+		ids: [58983],
+		
+		decorator_text: "BlizzCon 2008"
+	},
+	
+	{
+		name: "BlizzCon 2009",
+		ids: [66030],
+		
+		decorator_text: "BlizzCon 2009"
+	},
+	
+		{
+		name: "BlizzCon 2010",
+		ids: [94070],
+		
+		decorator_text: "BlizzCon 2010"
+	},
+	
+		{
+		name: "BlizzCon 2011",
+		ids: [101606],
+		
+		decorator_text: "BlizzCon 2011"
 	},
 
 	// IDs von Mounts, die nicht dauerhaft erlernbar sind: 50869, 89520

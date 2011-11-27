@@ -1,0 +1,3 @@
+http://docs.ahspy.com/api/
+
+http://blizzard.github.com/api-wow-docs/

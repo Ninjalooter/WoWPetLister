@@ -15,6 +15,7 @@ body {
 }
 
 #page { /* include header, content */
+	z-index:50;
 	margin:auto;
 	width:960px;
 	
@@ -38,7 +39,7 @@ body {
 	z-index:100;
 }
 #logo {
-	z-index:200;
+	z-index:60;
 	position:relative;
 	left:200px;
 	
@@ -123,6 +124,7 @@ body {
 
 #result_list .item {
 	padding:10px;
+	cursor:pointer;
 }
 
 #result_list .horde {
@@ -144,6 +146,64 @@ body {
 	color: white;
 	font-weight:bold;
 }
+#nav a {
+	color: white;
+	font-weight: bold;
+}
 a {
 	color:black;
 }
+
+/* POPUP */
+/* ===== */
+.popup_window {
+	background-color:rgba(0,0,0,0.7);
+	z-index:100;
+	position: fixed;
+	left:0px;
+	top:0px;
+	right:0px;
+	bottom:0px;
+	
+}
+#popup .buffer {
+	margin-top:-115px;
+	height:50%;
+}
+#popup .popup {
+	border-radius:15px;
+	margin:auto;
+	width:350px;
+	height:230px;
+	
+	padding-top:4px;
+	padding-left:8px;
+	padding-right:8px;
+	
+	background-color:white;
+	border:2px black solid;
+}
+.popup_head {
+	margin:5px;
+	height: 60px;
+	clear:both;
+}
+.popup_head .name {
+	font-weight:bold;
+	
+}
+.popup_head img {
+	float:left;
+	padding-right:5px;
+}
+
+#popup_ahtable {
+	border:1px black solid;
+	padding:0px;
+}
+#popup_ahtable .qty {
+	border-right:1px black solid;
+}
+#popup .horde { color:red; }
+#popup .alliance { color:blue; }
+#popup .neutral { color:black; }

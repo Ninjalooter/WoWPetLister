@@ -1,0 +1,140 @@
+<html>
+	<head>
+		<title>Compiler</title>
+		
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+		
+		<script>
+			var gResult = {};
+			// Callback from wowhead file which we process here
+			function Listview(data) {
+				var output = gResult;
+				
+				jQuery.each(data.data, function(i, mapping) {
+					var spellId = mapping.id;
+					if ( !mapping.reagents ) {
+						return;
+					}
+					var itemId = mapping.reagents[0][0];
+					
+					output[spellId] = itemId;
+				});
+			}
+			
+			var gMountSpells, gPetSpells;
+			var gMountItems, gPetItems;
+			var g_spells = [];
+			var g_items = [];
+			
+			var gResultList = 'pets';
+		</script>
+		<script src="pet_lister.companions.de.js" charset="latin1"></script>
+		<script>
+			gPetSpells = g_spells; // Store globally
+			gPetItems = g_items;
+			// Reset g_spells
+			g_spells = g_items = [];
+			
+			gResultList = 'mounts';
+		</script>
+		<script src="pet_lister.mounts.de.js" charset="latin1"></script>
+		<script>
+			gMountSpells = g_spells; // Store globally
+			gMountItems = g_items;
+		</script>
+		<script>
+			
+			$(document).ready(function() {
+				$("#b_generate").click(function() {
+					console.log("Generating!");
+					
+					
+					// Enrich the g_spells array & CLeanup
+					var petSpells = {}, mountSpells = {}, petItems = {}, mountItems = {};
+					
+					jQuery.each(gPetSpells, function(spellId, spell) {
+						if ( !spell) 
+							return;
+						spell.id = spellId;
+						
+						// SIDEEFFECT!!!!!!!!!!!!!!
+						petSpells[spellId] = spell;
+					});
+					
+					jQuery.each(gMountSpells, function(spellId, spell) {
+						if ( !spell) 
+							return;
+						spell.id = spellId;
+						
+						// SIDEEFFECT!!!!!!!!!!!!!!
+						mountSpells[spellId] = spell;
+					});
+					
+					jQuery.each(gPetItems, function(spellId, spell) {
+						if ( !spell) 
+							return;
+						spell.id = spellId;
+						
+						// SIDEEFFECT!!!!!!!!!!!!!!
+						petItems[spellId] = spell;
+					});
+					
+					jQuery.each(gMountItems, function(spellId, spell) {
+						if ( !spell) 
+							return;
+						spell.id = spellId;
+						
+						// SIDEEFFECT!!!!!!!!!!!!!!
+						mountItems[spellId] = spell;
+					});
+					
+					//// Generate output
+					var resultText = "/*List of Mount / Companions with Items / Spells and Mapping*/";
+					// Mapping
+					resultText += "/*Mapping of Companion/Mount Spells [spellId => {itemId]]*/\n";
+					resultText += "var gSpellsMapping = [];\n";
+					jQuery.each(gResult, function(spellId, itemIds) {
+						resultText += "gSpellsMapping[" + spellId + "] = " + JSON.stringify(itemIds) + ";\n";
+					});
+					resultText += "\n";
+					
+					
+					// Pure list objects
+					jQuery.each({
+						gPetSpells: petSpells, 
+						gMountSpells: mountSpells,
+						
+						gPetItems: petItems,
+						gMountItems: mountItems
+						
+					}, function(id, obj) {
+						resultText += "var " + id + " =  [];"; 
+						jQuery.each(obj, function(k, v) {
+							resultText += id + "[" + k + "] = " + JSON.stringify(v) + ";\n";
+						});
+						resultText += "\n";
+					});
+					
+					if ( $("#newlines").attr('checked') != "checked") {
+						resultText = resultText.replace(/\n/g, "");
+					}
+					
+					$("#output").val(resultText);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<ol>	
+			<li>Update the following files with the corresponding JS snippet from wowhead: <i>pet_lister.mounts.de.js</i>, <i>pet_lister.companions.de.js</i><br />
+				See the source of each link at the head of each file.</li>
+			<li>Reload this page</li>
+			<li>Press Generate</li>
+			<li>Copy and paste the content of this textarea into the <i>petlister.compiled.js</i></li>
+		</ol>
+		<input type=checkbox id=newlines value="true" checked> <label for="newlines">Add newlines</label>
+		<button id=b_generate>Generate</button><br />
+		<textarea rows=40 cols=150 id=output></textarea>
+		
+	</body>
+</html>

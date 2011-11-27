@@ -26,7 +26,7 @@
 			return this.each(function() {
 				var select = $(this);
 				select.empty();
-				select.append("<option>Loading ...");
+				select.append("<option value=''>Loading ...</option>");
 				select.attr('disabled', 'disabled');
 				
 				var realmsUrl = ("https:" === document.location.protocol ? "https" : "http")+ "://" + options.region + "/api/wow/realm/status";

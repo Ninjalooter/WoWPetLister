@@ -3,32 +3,21 @@
 		<title>WoW Pet Lister - Ninjalooter</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
 		
-		<script src="jquery.1.6.1.js"></script>
+		<meta name="description" content="Den Überblick über Eure Haus- und Reittiersammlung verloren? Unser WoW Pet Lister hilft aus und zeugt Euch alle noch fehlenden Tiere mit einem Klick an." />
+		<meta name="keywords" content="wow, pet, lister, haustiere, reittier, zoo, achievement, erfolg, liste, wächterjunges, guide, haustier, begleiter, horde, allianz, server" />
+		<link rel="canonical" href="http://ninjalooter.de/WoWPetLister/" />
+		
+		<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>-->
+		<script src="http://code.jquery.com/jquery-1.7.1.js"></script>
 		<script src="jquery.cookie.js"></script>
 		<script src="jquery.battlenet.wow.js"></script>
 		<script src="pet_lister.ids.js"></script>
+		<script src="pet_lister.compiled.js" charset="latin1"></script>
+		
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.3.0/mustache.min.js"></script>
 		
 		<script>
-			var gMountSpells, gPetSpells;
-			var g_spells = [];
-			var g_items = [];
-		</script>
-		<script src="pet_lister.companions.js" charset="latin1"></script>
-		<script>
-			gPetSpells = g_spells; // Store globally
-			
-			// Reset g_spells
-			g_spells = [];
-		</script>
-		<script src="pet_lister.mounts.de.js" charset="latin1"></script>
-		<script>
-			gMountSpells = g_spells; // Store globally
-		</script>
-		
-		
-		
-		<script>
-			function filterSpellIdListe(playerList, spellIDList) {
+			function filterSpellIdListe(playersSpellList, spellIDList) {
 				if ( gBlacklist ) {
 					// Filter certain IDs completly
 					spellIDList = jQuery.grep(spellIDList, function(spell, _index) {
@@ -37,25 +26,145 @@
 				}
 				// Filter out the spells from list spellIDList which the player does not have
 				return jQuery.grep(spellIDList, function(spell, _index) {
-					return spell && jQuery.inArray(spell.id, playerList) == -1;
+					return spell && jQuery.inArray(spell.id, playersSpellList) == -1;
 				});
 				
 			}
 			
+			function ahspy_itemurl(region, realm, faction, itemId) {
+				return "http://www.ahspy.com/" + region.substr(0,2) + "/" + realm + "/item/" + itemId + "/#" + faction;
+			}
 			function wowhead_spellicon(spell) {
 				if (spell.icon) {
 					return "http://static.wowhead.com/images/wow/icons/large/" + spell.icon + ".jpg";  
 				}
 				return "";
 			}
-			function wowhead_spellurl(spell) {
-				return "http://de.wowhead.com/spell=" + spell;
+			function wowhead_spellurl(spellId) {
+				return "http://de.wowhead.com/spell=" + spellId;
 			}
 			
-			jQuery.fn.pet_lister = function(playerSpellList, raceId, spellIdList) {
+			function useDecorators(spellId, callback) {
+				jQuery.each(gDecoratorAndFilters, function(decorator_index, decorator) {
+				if (!decorator.decorator_text) {
+					return;
+				}
+				
+				if (jQuery.inArray(spellId, decorator.ids) >= 0) {
+						callback(decorator);
+					}
+				});
+			}
+			
+			
+			function popup_show(spell, character) {
+				var itemId = gSpellsMapping[spell.id];
+				var region = $("#region").val(); // eu, us, kr, ...
+				var realm = $("#realm").val();
+				var faction = $.battlenet({action: 'get-faction-by-race', race:character.race}).toLowerCase();
+				
+				var popupWindow = $("#popup").attr('style', '').click(function() {
+					$(this).attr('style', 'display:none');
+				});
+				var popupContent = $("#popup .popup").empty(); // Overwrite click handler for the inner div element
+				popupContent.click(function(event) {
+					event.stopPropagation();
+				});
+				var tags = [];				
+				useDecorators(spell.id, function(decorator) {
+					tags.push(decorator.decorator_text);
+				});
+				
+				var data = {
+					spell_iconurl: wowhead_spellicon(spell),
+					spell_name: spell.name_dede,
+					links: [
+						{label: 'AHSpy', url: ahspy_itemurl(region, realm, faction, itemId)},
+						{label: 'Wowhead', url: wowhead_spellurl(spell.id)},						
+						{label: 'Buffed.de', url: 'http://wowdata.buffed.de/?s=' + spell.id}
+					],
+					
+					// Tags
+					has_tags: tags.length > 0,
+					tags: tags,
+					
+					description_text: gDescriptions[spell.id]
+					
+				};
+				var template = "<div class='popup_head'>" +
+							   "<img alt='Spell Icon' src='{{{spell_iconurl}}}' />" + 
+							   " <span class=name>{{spell_name}}</span><br />" + 
+							   " <div>Links: {{#links}} <a target='_blank' href='{{{url}}}'>{{label}}</a>{{/links}}</div>" + 
+							   " {{#has_tags}}<div>Tags: {{#tags}}{{{.}}} {{/tags}}</div>{{/has_tags}}" + 
+							   "</div>" + 
+							   "<p>{{{description_text}}}</p>" + 
+							   "";
+				
+				
+				var html = Mustache.to_html(template, data);
+				popupContent.append(html);
+				
+				
+				
+				// Start AJAX Request to fetch ahspy-data
+				
+				if ( (region == "eu.battle.net" || region == "us.battle.net") && realm != "" ) {
+					var template = 
+						"<div>" +
+						" <div>Auktionshaus-Preise auf deinem Server:</div>" + 
+						" <table id='popup_ahtable'><tr><td>Loading ...</td></tr></table>" + 
+						" <a href='http://www.ahspy.com/global/item/{{item_id}}' target=_blank>Globale Preisliste bei AHSpy</a>" + 
+						"</div>";
+					var data = {
+						item_id: itemId
+					};
+					popupContent.append(Mustache.to_html(template, data));
+					
+					$.ajax('http://api.ahspy.com/' + region.substr(0,2) + '/' + realm + '/item/' + itemId + '/monthly.json', {
+						success: function(data) {
+							var table = $("#popup_ahtable").empty();
+							var headerLine = "<tr>" +
+								"<th>Fraktion</th>" + 
+								"<th class='qty'>Anzahl</th>" + 
+								
+								"<th>Min</th>" + 
+								"<th>Max</th>" + 
+								"<th>Avg</th>" +
+								
+							"</tr>";
+							table.append(headerLine);
+							jQuery.each(data, function(factionShortCode, auctions) {
+								var tr = $("<tr></tr>");
+								
+								if ( factionShortCode == "a" ) {
+									tr.append("<td class='alliance'>Alliance</td>");
+								} 
+								else if ( factionShortCode == "h" ) {
+									tr.append("<td class='horde'>Horde</td>");
+								} else {
+									tr.append("<td class='neutral'>Neutral</td>");
+								}
+								
+								jQuery.each(['qty', 'min', 'max', 'avg'], function(i, field) {
+									var td = $("<td></td>").addClass(field);
+									td.text(auctions[field]);
+									tr.append(td);
+								});
+								table.append(tr);
+							});
+							
+						}
+					});						
+				} else {
+					popupContent.append("AHSpy Data not supported in your region.");
+				}
+			}
+			
+			
+			jQuery.fn.pet_lister = function(playerSpellList, character, spellIdList) {
 				return this.each(function() {
 					var element = $(this);
-					
+										
 					var spellText;
 					
 					if ($("input[name='typ']:checked").val() == "companions") {
@@ -82,7 +191,7 @@
 						}
 					});
 					// Process Faction Filters
-					var charFaction = $.battlenet({'action':'get-faction-by-race', 'race':raceId});
+					var charFaction = $.battlenet({'action':'get-faction-by-race', 'race':character.race});
 					var factionSpellIds = (charFaction == "ALLIANCE" ? gRaceAllianceIds : gRaceHordeIds);
 					var otherFactionSpellIds = (charFaction == "HORDE" ? gRaceAllianceIds : gRaceHordeIds);
 					
@@ -118,26 +227,27 @@
 							
 							var container = $("<div class='item'></div>").appendTo(td);
 							
+							container.click(function() {
+								popup_show(value, character);
+								return false;
+							});
+							
 							var spellIconUrl = wowhead_spellicon(value);
 							if (spellIconUrl) {
 								var img = $("<img />");
 								img.attr("border", "0");
 								img.attr("src", spellIconUrl);
-								container.append($("<a></a>").append(img).attr("href", spellUrl)).append("<br />");
+								// container.append($("<a></a>").append(img).attr("href", spellUrl)).append("<br />");
+								container.append(img).append("<br />");
 							}
 							
 							
-							container.append($("<a></a>").attr("href", spellUrl).text(name)).append("<br />");
-							
-							jQuery.each(gDecoratorAndFilters, function(decorator_index, decorator) {
-								if (!decorator.decorator_text) {
-									return;
-								}
-								
-								if (jQuery.inArray(id, decorator.ids) >= 0) {
-									container.append($("<span>" + decorator.decorator_text + "</span><br />"));
-								}
+							// container.append($("<a></a>").attr("href", spellUrl).text(name)).append("<br />");
+							container.append($("<u></u>").append(name)).append("<br />");
+							useDecorators(id, function(decorator) {
+								container.append($("<span>" + decorator.decorator_text + "</span><br />"));
 							});
+							
 							// Close the row after 4 spells
 							tdCounter++;
 							if (tdCounter == 4) {
@@ -157,17 +267,6 @@
 			};
 			
 			$(document).ready(function(){ 
-				// Enrich the g_spells array
-				jQuery.each(gPetSpells, function(spellId, spell) {
-					if ( !spell) 
-						return;
-					spell.id = spellId;
-				});
-				jQuery.each(gMountSpells, function(spellId, spell) {
-					if ( !spell) 
-						return;
-					spell.id = spellId;
-				});
 				
 				// Load cookie data
 				$("#region").val($.cookie('pet_lister_region'));
@@ -205,9 +304,9 @@
 						handler: function(character) {
 							var result = $("#result_list");
 							if (filterType == "companions") {
-								result.pet_lister(character.companions, character.race, gPetSpells);
+								result.pet_lister(character.companions, character, gPetSpells);
 							} else {
-								result.pet_lister(character.mounts, character.race, gMountSpells);
+								result.pet_lister(character.mounts, character, gMountSpells);
 							}
 							if ( window.$WowheadPower && $WowheadPower.init ) {
 								$WowheadPower.init();
@@ -226,7 +325,7 @@
 			});
 		</script>
 		
-		<script type="text/javascript" src="http://static.wowhead.com/widgets/power.js"></script>
+		<!--<script type="text/javascript" src="http://static.wowhead.com/widgets/power.js"></script>-->
 		<link rel="stylesheet" type="text/css" media="all" href="pet_lister.css">
 	</head>
 	<body>	
@@ -236,7 +335,7 @@
 				<img id="logo" class="center" title="WoW Pet Lister" src="WPL_Banner.png" alt="" width="600" height="100" />
 			</div>			
 			<div id="nav" class="bar">
-				Version 1.1.2
+				Pr&auml;sentiert von <a href="http://ninjalooter.de" target="_blank">Ninjalooter.de</a> | Version 1.1.2
 			</div>
 			<div class="content">
 				<div>
@@ -249,7 +348,7 @@
 						<option value="battlenet.com.cn">CN</option>
 					</select>
 					<select id="realm">
-						<option>Bitte warten</option>
+						<option value="">Bitte warten</option>
 					</select>
 					<input type="text" id="charname" />
 				</div>
@@ -305,8 +404,13 @@
 			</div>
 
 			<div class="footer">
-				Von <a href="http://ninjalooter.de/">Ninjalooter.de</a> | Databank <a href="http://de.wowhead.com/">wowhead.com</a> | Charakterdaten von <a href="http://blizzard.github.com/api-wow-docs/">battle.net</a>
+				Von <a href="http://ninjalooter.de/" target="_blank">Ninjalooter.de</a> | Databank <a href="http://de.wowhead.com/" target="_blank">wowhead.com</a> | Charakterdaten von <a href="http://blizzard.github.com/api-wow-docs/"  target="_blank">battle.net</a>
 			</div>
+		</div>
+		
+		<div id="popup" class="popup_window" style="display:none">
+			<div class="buffer"></div>
+			<div class="popup"><!-- Content goes here --></div>
 		</div>
 		
 		<script type="text/javascript">//<![CDATA[

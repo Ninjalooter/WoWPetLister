@@ -6,7 +6,9 @@
 */
 body {
 	background-color:#1A1A1A;
-	margin:0px;
+	margin:0px;,
+	
+	
 }
 
 .guide {
@@ -36,7 +38,7 @@ body {
 }
 #mauer {
 	position:absolute;
-	z-index:100;
+	z-index:55;
 }
 #logo {
 	z-index:60;
@@ -171,14 +173,16 @@ a {
 	height:50%;
 }
 #popup .popup {
+	font-family:Tahoma, Helvetica, Geneva, Verdana, Arial, sans-serif;
 	border-radius:15px;
 	margin:auto;
-	width:350px;
-	height:230px;
+	width:550px;
+	min-height:300px;
 	
-	padding-top:4px;
-	padding-left:8px;
-	padding-right:8px;
+	padding-top:10px;
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:16px;
 	
 	background-color:white;
 	border:2px black solid;
@@ -197,13 +201,27 @@ a {
 	padding-right:5px;
 }
 
-#popup_ahtable {
+.popup_ahtable {
 	border:1px black solid;
 	padding:0px;
 }
-#popup_ahtable .qty {
+.popup_ahtable .qty {
 	border-right:1px black solid;
 }
 #popup .horde { color:red; }
 #popup .alliance { color:blue; }
 #popup .neutral { color:black; }
+
+/* Icons */
+.icon-gold {
+	padding-right: 15px;
+	background: url(http://eu.battle.net/wow/static/images/icons/gold.gif) right center no-repeat;
+}
+.icon-silver {
+	padding-right: 15px;
+	background: url(http://eu.battle.net/wow/static/images/icons/silver.gif) right center no-repeat;
+}
+.icon-copper {
+	padding-right: 15px;
+	background: url(http://eu.battle.net/wow/static/images/icons/copper.gif) right center no-repeat;
+}

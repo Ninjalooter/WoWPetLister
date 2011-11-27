@@ -1,4 +1,7 @@
-﻿// Which Spells to ignore completly?
+﻿// Overwrite automatically generated mapping of spells => items
+gSpellsMapping[98736] = [72068];
+
+// Which Spells to ignore completly?
 var gBlacklist = [
 	/* spellIds */
 	89520, 
@@ -7,7 +10,7 @@ var gBlacklist = [
 
 // Text to show in the popup for a Pet / Mount
 var gDescriptions = {
-	100684: 'Hallo <b>Welt!</b> Mehr Infos gibt\'s in diesem <a target="_new" href="http://ninjalooter.de/meine-pets">diesem Artikel</a>.'
+	4055: 'Hallo <b>Welt!</b> <br /><br /><br /><br />asdassssssssssssssssssssssssssssssssssssssssssssssssssssssss<br />Mehr Infos gibt\'s in diesem <a target="_new" href="http://ninjalooter.de/meine-pets">diesem Artikel</a>.'
 };
 
 var gRaceHordeIds = {

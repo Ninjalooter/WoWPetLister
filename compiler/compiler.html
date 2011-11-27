@@ -15,32 +15,33 @@
 					if ( !mapping.reagents ) {
 						return;
 					}
-					var itemId = mapping.reagents[0][0];
+					if ( output[spellId] == undefined) {
+						output[spellId] = [];
+					}
+					jQuery.each(mapping.reagents, function(i, stuff) {
+						output[spellId].push(/*itemId*/ stuff[0]);
+					});
 					
-					output[spellId] = itemId;
 				});
 			}
+		</script>
 			
-			var gMountSpells, gPetSpells;
-			var gMountItems, gPetItems;
+		<script>
 			var g_spells = [];
 			var g_items = [];
-			
-			var gResultList = 'pets';
 		</script>
 		<script src="pet_lister.companions.de.js" charset="latin1"></script>
 		<script>
-			gPetSpells = g_spells; // Store globally
-			gPetItems = g_items;
+			var gPetSpells = g_spells; // Store globally
+			var gPetItems = g_items;
 			// Reset g_spells
-			g_spells = g_items = [];
-			
-			gResultList = 'mounts';
+			g_spells = [];
+			g_items = [];
 		</script>
 		<script src="pet_lister.mounts.de.js" charset="latin1"></script>
 		<script>
-			gMountSpells = g_spells; // Store globally
-			gMountItems = g_items;
+			var gMountSpells = g_spells; // Store globally
+			var gMountItems = g_items;
 		</script>
 		<script>
 			
@@ -70,28 +71,28 @@
 						mountSpells[spellId] = spell;
 					});
 					
-					jQuery.each(gPetItems, function(spellId, spell) {
-						if ( !spell) 
+					jQuery.each(gPetItems, function(itemId, item) {
+						if ( !item) 
 							return;
-						spell.id = spellId;
+						item.id = itemId;
 						
 						// SIDEEFFECT!!!!!!!!!!!!!!
-						petItems[spellId] = spell;
+						petItems[itemId] = item;
 					});
 					
-					jQuery.each(gMountItems, function(spellId, spell) {
-						if ( !spell) 
+					jQuery.each(gMountItems, function(itemId, item) {
+						if ( !item) 
 							return;
-						spell.id = spellId;
+						item.id = itemId;
 						
 						// SIDEEFFECT!!!!!!!!!!!!!!
-						mountItems[spellId] = spell;
+						mountItems[itemId] = item;
 					});
 					
 					//// Generate output
 					var resultText = "/*List of Mount / Companions with Items / Spells and Mapping*/";
 					// Mapping
-					resultText += "/*Mapping of Companion/Mount Spells [spellId => {itemId]]*/\n";
+					resultText += "/*Mapping of Companion/Mount Spells [spellId => [itemId]]*/\n";
 					resultText += "var gSpellsMapping = [];\n";
 					jQuery.each(gResult, function(spellId, itemIds) {
 						resultText += "gSpellsMapping[" + spellId + "] = " + JSON.stringify(itemIds) + ";\n";

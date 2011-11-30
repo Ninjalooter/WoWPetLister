@@ -122,15 +122,17 @@
 						
 					// Each spell can have multiple Items which provides the spell. Shows prices for each separately
 					jQuery.each(itemIds, function(i, itemId) {
-						var table = $("<table class='popup_ahtable'><tr><td>Loading ...</td></tr></table>");
-						ahContainer.append(table);
-						
-						var template = " <a href={{{ahspy_link}}}>Daten (Quelle)</a> und <a href='http://www.ahspy.com/global/item/{{item_id}}' target=_blank>Globale Preisliste</a> von AHSpy";
+						var template = "<div>" +
+									   " <table class='popup_ahtable'><tr><td>Loading ...</td></tr></table>" + 
+						               " <a href={{{ahspy_link}}}>Daten (Quelle)</a> und <a href='http://www.ahspy.com/global/item/{{item_id}}' target=_blank>Globale Preisliste</a> von AHSpy" + 
+									   "</div>";
 						var data = {
 							ahspy_link: ahspy_itemurl(region, realm, faction, itemId),
 							item_id: itemId
 						};
-						ahContainer.append(Mustache.to_html(template, data));
+						var ahDiv = $(Mustache.to_html(template, data));
+						var table = $(".popup_ahtable", ahDiv);
+						ahContainer.append(ahDiv);
 					
 						$.ajax('http://api.ahspy.com/' + region.substr(0,2) + '/' + realm + '/item/' + itemId + '/monthly.json', {
 							jsonp: 'callback',
@@ -148,7 +150,8 @@
 								"</tr>";
 								table.append(headerLine);
 								
-								if ( data.a == null && data.h == null && data.n == null ) {
+								if ( (data.a == null && data.h == null && data.n == null) ||
+								     (data.a.qty == 0 && data.h.qty == 0 && data.n.qty == 0)) {
 									// Remove the table
 									table.detach();
 									
@@ -160,7 +163,7 @@
 								}
 								
 								jQuery.each(data, function(factionShortCode, auctions) {
-									if ( auctions == null ) return;
+									if ( auctions == null || auctions.qty == 0 ) return;
 									var tr = $("<tr></tr>");
 									
 									if ( factionShortCode == "a" ) {
@@ -456,7 +459,7 @@
 			</div>
 
 			<div class="footer">
-				Von <a href="http://ninjalooter.de/" target="_blank">Ninjalooter.de</a> | Databank <a href="http://de.wowhead.com/" target="_blank">wowhead.com</a> | Charakterdaten von <a href="http://blizzard.github.com/api-wow-docs/"  target="_blank">battle.net</a>
+				Von <a href="http://ninjalooter.de/" target="_blank">Ninjalooter.de</a> | Datenbank <a href="http://de.wowhead.com/" target="_blank">wowhead.com</a> | Preise von <a href="http://ahspy.com" target="_blank">AHSpy</a> | Charakterdaten von <a href="http://blizzard.github.com/api-wow-docs/"  target="_blank">battle.net</a>
 			</div>
 		</div>
 		

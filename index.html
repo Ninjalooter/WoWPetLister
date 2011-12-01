@@ -261,6 +261,7 @@
 						});
 					}
 					
+					missingSpells.reverse();
 					
 					// Prepare output list
 					var table = $("<table></table>");
@@ -281,6 +282,13 @@
 							currentTr.append(td);
 							
 							var container = $("<div class='item'></div>").appendTo(td);
+							
+							jQuery.each(gDecoratorAndFilters, function(_i, decorator) {
+								if ( decorator.css_class &&
+									 jQuery.inArray(id, decorator.ids) > -1) {
+									td.addClass(decorator.css_class);
+								}
+							});
 							
 							container.click(function() {
 								popup_show(value, character);
@@ -390,7 +398,7 @@
 				<img id="logo" class="center" title="WoW Pet Lister" src="WPL_Banner.png" alt="" width="600" height="100" />
 			</div>			
 			<div id="nav" class="bar">
-				Pr&auml;sentiert von <a href="http://ninjalooter.de" target="_blank">Ninjalooter.de</a> | Version 1.2.0
+				Pr&auml;sentiert von <a href="http://ninjalooter.de" target="_blank">Ninjalooter.de</a> | Version 1.2.1
 			</div>
 			<div class="content">
 				<div>

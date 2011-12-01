@@ -129,6 +129,11 @@ body {
 	cursor:pointer;
 }
 
+#result_list td.highlight {
+	background-color:#cecece;
+}
+
+
 #result_list .horde {
 	font-weight:bold;
 	color:Red;

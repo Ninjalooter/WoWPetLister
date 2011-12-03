@@ -3,138 +3,7 @@ gSpellsMapping[98736] = [72068];
 
 // Beispiel für neue eigene Pets bzw Mounts:
 //Pets
-gPetSpells[103076] = {"name_dede":"Dunkelmond-Ballon","rank_dede":"","icon":"inv_misc_bag_10_black","id":103076};
-gPetItems[73762] = {"name_dede":"Dunkelmond-Ballon","quality":4,"icon":"inv_misc_bag_10_black","id":73762};
-gSpellsMapping[103076] = [73762];
 
-gPetSpells[105122] = {"name_dede":"Dunkelmond-Junges","rank_dede":"","icon":"ability_mount_jungletiger","id":105122};
-gPetItems[74981] = {"name_dede":"Dunkelmond-Junges","quality":4,"icon":"ability_mount_jungletiger","id":74981};
-gSpellsMapping[105122] = [74981];
-
-gPetSpells[101733] = {"name_dede":"Dunkelmond-Affe","rank_dede":"","icon":"ability_hunter_aspectofthemonkey","id":101733};
-gPetItems[73764] = {"name_dede":"Dunkelmond-Affe","quality":4,"icon":"ability_hunter_aspectofthemonkey","id":73764};
-gSpellsMapping[101733] = [73764];
-
-gPetSpells[103544] = {"name_dede":"Dunkelmond-Panzer","rank_dede":"","icon":"inv_gizmo_goblingtonkcontroller","id":103544};
-gPetItems[73903] = {"name_dede":"Dunkelmond-Panzer","quality":4,"icon":"inv_gizmo_goblingtonkcontroller","id":73903};
-gSpellsMapping[103544] = [73903];
-
-gPetSpells[103074] = {"name_dede":"Dunkelmond-Schildkröte","rank_dede":"","icon":"inv_misc_fish_turtle_01","id":103074};
-gPetItems[73765] = {"name_dede":"Dunkelmond-Schildkröte","quality":4,"icon":"inv_misc_fish_turtle_01","id":73765};
-gSpellsMapping[103074] = [73765];
-
-gPetSpells[103549] = {"name_dede":"Dunkelmond-Zeppelin","rank_dede":"","icon":"inv_gizmo_goblingtonkcontroller","id":103549};
-gPetItems[73905] = {"name_dede":"Dunkelmond-Zeppelin","quality":4,"icon":"inv_gizmo_goblingtonkcontroller","id":73905};
-gSpellsMapping[103549] = [73905];
-
-gPetSpells[103588] = {"name_dede":"Seepferdchen","rank_dede":"","icon":"ability_mount_seahorse","id":103588};
-gPetItems[73953] = {"name_dede":"Seepferdchen","quality":4,"icon":"ability_mount_seahorse","id":73953};
-gSpellsMapping[103588] = [73953];
-
-gPetSpells[104047] = {"name_dede":"Mondlaterne","rank_dede":"","icon":"inv_shield_26","id":104047};
-gPetItems[74610] = {"name_dede":"Mondlaterne","quality":4,"icon":"achievement_worldevent_lunar","id":74610};
-gSpellsMapping[104047] = [74610];
-
-gPetSpells[104049] = {"name_dede":"Festliche Lampe","rank_dede":"","icon":"inv_shield_26","id":104049};
-gPetItems[74611] = {"name_dede":"Festliche Lampe","quality":4,"icon":"achievement_worldevent_lunar","id":74611};
-gSpellsMapping[104049] = [74611];
-
-gPetSpells[105633] = {"name_dede":"Speer des Fetischschamanen","rank_dede":"","icon":"inv_spear_05","id":105633};
-gPetItems[76062] = {"name_dede":"Speer des Fetischschamanen","quality":4,"icon":"inv_spear_05","id":76062};
-gSpellsMapping[105633] = [76062];
-
-gPetSpells[110029] = {"name_dede":"Seele der Aspekte","rank_dede":"","icon":"inv_pet_chromaticdragon","id":110029};
-gPetItems[78916] = {"name_dede":"Seele der Aspekte","quality":4,"icon":"inv_pet_chromaticdragon","id":78916};
-gSpellsMapping[110029] = [78916];
-
-gPetSpells[103125] = {"name_dede":"Klumpi","rank_dede":"","icon":"inv_ore_tin_01","id":103125};
-gPetItems[73797] = {"name_dede":"Kohleklumpen","quality":4,"icon":"inv_ore_tin_01","id":73797};
-gSpellsMapping[103125] = [73797];
-
-gPetSpells[102317] = {"name_dede":"Grausiger Grell","rank_dede":"","icon":"inv_misc_herb_06","id":102317};
-gPetItems[72134] = {"name_dede":"Grellmoos","quality":4,"icon":"inv_misc_herb_06","id":72134};
-gSpellsMapping[102317] = [72134];
-
-gPetSpells[101493] = {"name_dede":"Purpurkugelfisch","rank_dede":"","icon":"inv_misc_fish_34","id":101493};
-gPetItems[71624] = {"name_dede":"Purpurkugelfisch","quality":4,"icon":"inv_misc_fish_34","id":71624};
-gSpellsMapping[101493] = [71624];
-
-gPetSpells[102353] = {"name_dede":"Sandskarabäus","rank_dede":"","icon":"inv_scarab_clay","id":102353};
-gPetItems[72153] = {"name_dede":"Sandskarabäus","quality":4,"icon":"inv_scarab_clay","id":72153};
-gSpellsMapping[102353] = [72153];
-
-//Mounts
-gMountSpells[103081] = {"name_dede":"Dunkelmondtanzbär","rank_dede":"","icon":"ability_hunter_pet_bear","id":103081};
-gMountItems[73766] = {"name_dede":"Dunkelmondtanzbär","quality":4,"icon":"ability_hunter_pet_bear","id":73766};
-gSpellsMapping[103081] = [73766];
-
-gMountSpells[102346] = {"name_dede":"Schneller Waldschreiter","rank_dede":"","icon":"ability_hunter_pet_tallstrider","id":102346};
-gMountItems[72140] = {"name_dede":"Schneller Waldschreiter","quality":4,"icon":"ability_hunter_pet_tallstrider","id":72140};
-gSpellsMapping[102346] = [72140];
-
-gMountSpells[103195] = {"name_dede":"Bergpferd","rank_dede":"","icon":"ability_mount_ridinghorse","id":103195};
-gMountItems[73838] = {"name_dede":"Bergpferd","quality":4,"icon":"ability_mount_ridinghorse","id":73838};
-gSpellsMapping[103195] = [73838];
-
-gMountSpells[103196] = {"name_dede":"Schnelles Bergpferd","rank_dede":"","icon":"ability_mount_ridinghorse","id":103196};
-gMountItems[73839] = {"name_dede":"Schnelles Bergpferd","quality":4,"icon":"ability_mount_ridinghorse","id":73839};
-gSpellsMapping[103196] = [73839];
-
-gMountSpells[102349] = {"name_dede":"Schneller Frühlingsschreiter","rank_dede":"","icon":"ability_hunter_pet_tallstrider","id":102349};
-gMountItems[72145] = {"name_dede":"Schneller Frühlingsschreiter","quality":4,"icon":"ability_hunter_pet_tallstrider","id":72145};
-gSpellsMapping[102349] = [72145];
-
-gMountSpells[102350] = {"name_dede":"Schneller Blumenstrauß","rank_dede":"","icon":"ability_hunter_pet_tallstrider","id":102350};
-gMountItems[72146] = {"name_dede":"Schneller Blumenstrauß","quality":4,"icon":"ability_hunter_pet_tallstrider","id":72146};
-gSpellsMapping[102350] = [72146];
-
-gMountSpells[107203] = {"name_dede":"Tyraels Streitross","rank_dede":"","icon":"ability_mount_tyraelmount","id":107203};
-gMountItems[76755] = {"name_dede":"Tyraels Streitross","quality":4,"icon":"ability_mount_tyraelmount","id":76755};
-gSpellsMapping[107203] = [76755];
-
-gMountSpells[107517] = {"name_dede":"Spektraler Windreiter","rank_dede":"","icon":"ability_mount_spectralwyvern","id":107517};
-gMountItems[76902] = {"name_dede":"Spektraler Windreiter","quality":4,"icon":"ability_mount_spectralwyvern","id":76902};
-gSpellsMapping[107517] = [76902];
-
-gMountSpells[107516] = {"name_dede":"Spektraler Greif","rank_dede":"","icon":"ability_mount_spectralgryphon","id":107516};
-gMountItems[76889] = {"name_dede":"Spektraler Greif","quality":4,"icon":"ability_mount_spectralgryphon","id":76889};
-gSpellsMapping[107516] = [76889];
-
-gMountSpells[107842] = {"name_dede":"Lodernder Drache","rank_dede":"","icon":"ability_mount_drake_red","id":107842};
-gMountItems[77067] = {"name_dede":"Lodernder Drache","quality":4,"icon":"ability_mount_drake_red","id":77067};
-gSpellsMapping[107842] = [77067];
-
-gMountSpells[107845] = {"name_dede":"Erste Dame der Lebensbinderin","rank_dede":"","icon":"ability_mount_drake_red","id":107845};
-gMountItems[77069] = {"name_dede":"Erste Dame der Lebensbinderin","quality":4,"icon":"ability_mount_drake_red","id":77069};
-gSpellsMapping[107845] = [77069];
-
-gMountSpells[107844] = {"name_dede":"Zwielichtbote","rank_dede":"","icon":"ability_mount_drake_red","id":107844};
-gMountItems[77068] = {"name_dede":"Zwielichtbote","quality":4,"icon":"ability_mount_drake_red","id":77068};
-gSpellsMapping[107844] = [77068];
-
-gMountSpells[110051] = {"name_dede":"Herz der Aspekte","rank_dede":"","icon":"inv_dragonchromaticmount","id":110051};
-gMountItems[78924] = {"name_dede":"Herz der Aspekte","quality":4,"icon":"inv_dragonchromaticmount","id":78924};
-gSpellsMapping[110051] = [78924];
-
-gMountSpells[101821] = {"name_dede":"Zwielichtdrache des ruchlosen Gladiators","rank_dede":"","icon":"ability_mount_drake_twilight","id":101821};
-gMountItems[71954] = {"name_dede":"Zwielichtdrache des ruchlosen Gladiators","quality":4,"icon":"ability_mount_drake_twilight","id":71954};
-gSpellsMapping[101821] = [71954];
-
-gMountSpells[110039] = {"name_dede":"Experiment 12-B","rank_dede":"","icon":"ability_mount_drake_twilight","id":110039};
-gMountItems[78919] = {"name_dede":"Experiment 12-B","quality":4,"icon":"ability_mount_drake_twilight","id":78919};
-gSpellsMapping[110039] = [78919];
-
-gMountSpells[101573] = {"name_dede":"Schneller Strandschreiter","rank_dede":"","icon":"ability_hunter_pet_tallstrider","id":101573};
-gMountItems[71718] = {"name_dede":"Schneller Strandschreiter","quality":4,"icon":"ability_hunter_pet_tallstrider","id":71718};
-gSpellsMapping[101573] = [71718];
-
-gMountSpells[102514] = {"name_dede":"Verderbter Hippogryph","rank_dede":"","icon":"ability_mount_warhippogryph","id":102514};
-gMountItems[72582] = {"name_dede":"Verderbter Hippogryph","quality":4,"icon":"ability_mount_warhippogryph","id":72582};
-gSpellsMapping[102514] = [72582];
-
-gMountSpells[102488] = {"name_dede":"Weißes Reitkamel","rank_dede":"","icon":"ability_mount_camel_gray","id":102488};
-gMountItems[72575] = {"name_dede":"Weißes Reitkamel","quality":4,"icon":"ability_mount_camel_gray","id":72575};
-gSpellsMapping[102488] = [72575];
 
 // Which Spells to ignore completly? Tiere, dessen Herkunft schon länger als ein Patch unbekannt ist.
 var gBlacklist = [
@@ -153,10 +22,10 @@ var gDescriptions = {
 	103074: '<img align="right" src="http://ninjalooter.de/blog/wp-content/uploads/Dunkelmond_Schildkroete.png" width="200" height="138" />Implementiert seit: Patch 4.3<br />Händler: Lhara<br />Ort: Dunkelmondinsel<br />Kosten: 90 Gewinnlose<br /><br /><b>Info:</b> Tierhändlerin Lhara verkauft Euch während des Dunkelmond-Jahrmarktes mehrere exotische Begleiter. Haustiere kosten 90, Reittiere 180 Gewinnlose. Die Lose erhaltet Ihr über das Abschließen von Quests auf dem Rummel.<br /><br />Guide: <a target="_new" class=\"guide\" href="http://ninjalooter.de/27255/wow-patch-4-3-der-dunkelmondjahrmarkt/">Der neue Dunkelmond-Jahrmarkt</a>',
 	103549: '<img align="right" src="http://ninjalooter.de/blog/wp-content/uploads/Dunkelmond_Zeppelin.png" width="150" height="160" />Implementiert seit: Patch 4.3<br />Händler: Lhara<br />Ort: Dunkelmondinsel<br />Kosten: 90 Gewinnlose<br /><br /><b>Info:</b> Tierhändlerin Lhara verkauft Euch während des Dunkelmond-Jahrmarktes mehrere exotische Begleiter. Haustiere kosten 90, Reittiere 180 Gewinnlose. Die Lose erhaltet Ihr über das Abschließen von Quests auf dem Rummel.<br /><br />Guide: <a target="_new" class=\"guide\" href="http://ninjalooter.de/27255/wow-patch-4-3-der-dunkelmondjahrmarkt/">Der neue Dunkelmond-Jahrmarkt</a>',
 	103588: '<img align="right" src="http://ninjalooter.de/blog/wp-content/uploads/Seepferdchen.png" width="100" height="164" />Implementiert seit: Patch 4.3<br />Beruf: Angeln<br />Mindestfertigkeit: 75<br /><br /><b>Info:</b> Angelt mit einer Angelfertigkeit von mindestens 75 Zählern in den Gewässern der Dunkelmondinsel, um mit Glücl ein kleines Seepferdchen herauszufischen.',
-	104047: '<img align="right" src="http://ninjalooter.de/blog/wp-content/uploads/Laterne_Allianz.png" width="100" height="173" />Implementiert seit: Patch 4.3<br />Feiertag: Mondfest<br />Händler: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=15864">Valadar Sternensang</a> in Mondlichtung<br />Kosten: 50 <a target="_new" href="http://de.wowhead.com/item=21100">Münzen der Urahnen</a><br /><br /><b>Info:</b> Die Gerüchte haben sich bewahrheitet. Die Lamterne ergattert ihr während des Mondfestes für 50 Münzen der Urahnen.',
-	104049: '<img align="right" src="http://ninjalooter.de/blog/wp-content/uploads/Laterne_Horde.png" width="150" height="166" />Implementiert seit: Patch 4.3<br />Feiertag: Mondfest<br />Händler: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=15864">Valadar Sternensang</a> in Mondlichtung<br />Kosten: 50 <a target="_new" href="http://de.wowhead.com/item=21100">Münzen der Urahnen</a><br /><br /><b>Info:</b> Die Gerüchte haben sich bewahrheitet. Die Lampe ergattert ihr während des Mondfestes für 50 Münzen der Urahnen.',
+	104047: '<img align="right" src="http://ninjalooter.de/blog/wp-content/uploads/Laterne_Allianz.png" width="100" height="173" />Implementiert seit: Patch 4.3<br />Feiertag: Mondfest<br />Händler: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=15864">Valadar Sternensang</a> in Mondlichtung<br />Kosten: 50 <a target="_new" href="http://de.wowhead.com/item=21100">Münzen der Urahnen</a><br /><br /><b>Info:</b> Die Gerüchte haben sich bewahrheitet. Die Laterne kauft Ihr während des Mondfestes für 50 Münzen der Urahnen beim Event-Händler.<br /><br />ACHTUNG: Nur Allianz!',
+	104049: '<img align="right" src="http://ninjalooter.de/blog/wp-content/uploads/Laterne_Horde.png" width="150" height="166" />Implementiert seit: Patch 4.3<br />Feiertag: Mondfest<br />Händler: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=15864">Valadar Sternensang</a> in Mondlichtung<br />Kosten: 50 <a target="_new" href="http://de.wowhead.com/item=21100">Münzen der Urahnen</a><br /><br /><b>Info:</b> Die Gerüchte haben sich bewahrheitet. Die Lampe kauft Ihr während des Mondfestes für 50 Münzen der Urahnen beim Event-Händler.<br /><br />ACHTUNG: Nur Horde!',
 	110029: 'Implementiert seit: Patch 4.3<br /><br /><b>Info:</b> Bisher ist die Herkunft des goldenen Mini-Drachen nicht bekannt. Gemunkelt wird, dass sowohl die kleine Variante ,Seele der Aspekte, als auch die ausgewachsene Version, Herz der Aspekte, mit dem Fall Todesschwinges und dem daraus resultierenden, neuen chromatischen Drachenswchwarm zu tun haben.',
-	103125: 'Implementiert seit: Patch 4.3<br /><br /><b>Info:</b> Wo Ihr Klumpy ergattern könnt, ist bisher nicht bekannt. Gemunkelt wird aber, dass es das kleine Kohlestück zum Winterhauchfest 2011 geben wird.', 
+	103125: 'Implementiert seit: Patch 4.3<br />Feiertag: Winterhauchfest<br />Enthalten in: <a target="_new" class=\"guide\" href="http://de.wowhead.com/item=73792">Gestohlenes Geschenk</a><br /><br /><b>Info:</b> Klumpi ergattert Ihr nur während des Winterhauchfests. Meistert die tägliche Gruppernaufgabe <a target="_new" href="http://de.wowhead.com/quest=6983">"So was Gemeines..."</a>, um als Belohnung ein gestohlenes Geschenk zu erhalten - darin enthalten: Klumpi, der Kohleklumpen.', 
 	102317: 'Implementiert seit: Patch 4.3<br />Trading Card Game: Krone des Himmels',
 	101493: 'Implementiert seit: Patch 4.3<br />Trading Card Game: Thron der Gezeiten',
 	102353: 'Implementiert seit: Patch 4.3<br />Trading Card Game: Gruft der Vergessenen',
@@ -166,16 +35,16 @@ var gDescriptions = {
 	110051: 'Implementiert seit: Patch 4.3<br /><br /><b>Info:</b> Bisher ist die Herkunft des imposanten, goldenen Drachen nicht bekannt. Gemunkelt wird, dass sowohl die kleine Variante ,Seele der Aspekte, als auch die ausgewachsene Version, Herz der Aspekte, mit dem Fall Todesschwinges und dem daraus resultierenden, neuen chromatischen Drachenswchwarm zu tun haben.',
 	103195: '<img align="right" src="http://ninjalooter.de/blog/wp-content/uploads/Bergpferd.png" width="125" height="182" />Implementiert seit: Patch 4.3<br />Ruf: Gilneas - Ehrfürchtig<br />Händler: Astrid Langstrump (Allianz)<br />Ort: An der Heulenden Eiche in Darnassus<br />Kosten: 80 Silber<br /><br /><b>Info:</b> Seit Ihr ein Worgen oder genießt ein ehrfürchtiges Ansehen bei der Fraktion Gilneas, verkauft Euch Astrid Langstrump in Darnassus zwei Bergpferde für wenig Geld.',
 	103196: '<img align="right" src="http://ninjalooter.de/blog/wp-content/uploads/Schnelles_Bergpferd.png" width="150" height="180" />Implementiert seit: Patch 4.3<br />Ruf: Gilneas - Ehrfürchtig<br />Händler: Astrid Langstrump (Allianz)<br />Ort: An der Heulenden Eiche in Darnassus<br />Kosten: 8 Gold<br /><br /><b>Info:</b> Seit Ihr ein Worgen oder genießt ein ehrfürchtiges Ansehen bei der Fraktion Gilneas, verkauft Euch Astrid Langstrump in Darnassus zwei Bergpferde für wenig Geld.',
-	102349: 'Implementiert seit: Patch 4.3<br />Feiertag: Nobelgarten<br />Kosten: 500 Nobelgartenschokolade (Event-Währung)<br /><br /><b>Info:</b> Diesen Ebenenschreirer ergattert ihr während des Nobelgarten-Events im Frühling (Ostern). Sammelt 500 Schokoladeneier, um Euch den flinken Zweibeiner beim Feiertagshändler zu kaufen.',
+	102349: 'Implementiert seit: Patch 4.3<br />Feiertag: Nobelgarten<br />Kosten: 500 Nobelgartenschokolade (Event-Währung)<br /><br /><b>Info:</b> Diesen Ebenenschreirer ergattert ihr während des Nobelgarten-Events im Frühling (Ostern). Sammelt 500 Schokoladeneier, um Euch den flinken Zweibeiner beim Feiertagshändler zu kaufen. Mit ganz besonders viel Glück findet Ihr das bunte Tierchen auch in einem <a target="_new" href="http://de.wowhead.com/item=45072">bunt gefärbten Ei</a>.',
 	102350: 'Implementiert seit: Patch 4.3<br />Feiertag: Liebe liegt in der Luft<br />Kosten: 270 <a target="_new" href="http://de.wowhead.com/item=49927">Zeichen der Liebe</a> (Event-Währung)<br /><br /><b>Info:</b> Die Gerüchte haben sich bestätigt. Der schnelle Blumenstrauß ist ein Ebenenschreiter, den ihr während des Valentinstag-Events, Liebe liegt in der Luft, beim Feiertagshändler für 270 Zeichen der Liebe kaufen könnt.',
 	107203: '<img align="right" src="http://ninjalooter.de/blog/wp-content/uploads/Tyraels_Streitross.jpg" width="200" height="128" />Implementiert seit: Patch 4.3<br /><br /><b>Info:</b> Habt Ihr Euch den WoW-Jahrspass zugelegt, erhaltet Ihr mit Patch 4.3 für jeden Eurer WoW-Charaktere Tyraels Streitross.<br /><br />Angebot: <a target="_new" class=\"guide\" href="http://eu.media.blizzard.com/wow/promotion/wap/de-de.html">WoW-Jahrespass</a>',
 	107517: 'Implementiert seit: Patch 4.3<br /><br /><b>Info:</b> Obwohl bisher niemand weiß, woher Ihr den spektralen Greif und Windreiter erhaltet, wird gemunkelt, dass es sich bei den Flugtieren um neuen Zuwachs im Blizzard Store handelt.',
 	107516: 'Implementiert seit: Patch 4.3<br /><br /><b>Info:</b> Obwohl bisher niemand weiß, woher Ihr den spektralen Greif und Windreiter erhaltet, wird gemunkelt, dass es sich bei den Flugtieren um neuen Zuwachs im Blizzard Store handelt.',
-	107842: '<img align="right" src="http://ninjalooter.de/blog/wp-content/uploads/LOdernder_Drache-150x150.jpg" width="150" height="150" />Implementiert seit: Patch 4.3<br />Boss-Drop: Todesschwinge (normal)<br />Ort: Endboss Drachenseele - Schlachtzug für Stufe 85<br />Dropchance: 100%',
-	107845: '<img align="right" src="http://ninjalooter.de/blog/wp-content/uploads/Lebensbinderin-150x150.jpg" width="150" height="150" />Implementiert seit: Patch 4.3<br />Boss-Drop: Todesschwinge (heroisch)<br />Ort: Endboss Drachenseele - Schlachtzug für Stufe 85<br />Dropchance: 100%',
-	107844: '<img align="right" src="http://ninjalooter.de/blog/wp-content/uploads/Zwielichtbote-150x150.jpg" width="150" height="150" />Implementiert seit: Patch 4.3<br />Erfolg: Ruhm des Schlachtzüglers der Drachenseele<br /><br /><b>Info:</b> Vom Aussehen her, ist der Zwielichtdrache den beiden Drachen, die Ihr beim Fall Todesschwinges erhaltet, wie aus dem Gesicht geschnitten. Ergattern könnt ihr ihn über den Meta-Erfolg "Ruhm des Schlachtzüglers der Drachenseele".',
+	107842: '<img align="right" src="http://ninjalooter.de/blog/wp-content/uploads/LOdernder_Drache-150x150.jpg" width="150" height="150" />Implementiert seit: Patch 4.3<br />Boss-Drop: Todesschwinge (normal und heroisch)<br />Ort: Endboss Drachenseele - Schlachtzug für Stufe 85<br />Dropchance: gering - rare (10er- als auch 25er-Schlachtzugsversion)',
+	107845: '<img align="right" src="http://ninjalooter.de/blog/wp-content/uploads/Lebensbinderin-150x150.jpg" width="150" height="150" />Implementiert seit: Patch 4.3<br />Boss-Drop: Todesschwinge (heroisch)<br />Ort: Endboss Drachenseele - Schlachtzug für Stufe 85<br />Dropchance: 100% (10er- als auch 25er-Schlachtzugsversion)',
+	107844: '<img align="right" src="http://ninjalooter.de/blog/wp-content/uploads/Zwielichtbote-150x150.jpg" width="150" height="150" />Implementiert seit: Patch 4.3<br />Erfolg: <a target="_new" class=\"guide\" href="http://de.wowhead.com/achievement=6169">Ruhm des Schlachtzüglers der Drachenseele</a><br /><br /><b>Info:</b> Vom Aussehen her, ist der Zwielichtdrache den beiden Drachen, die Ihr beim Fall Todesschwinges erhaltet, wie aus dem Gesicht geschnitten. Ergattern könnt ihr ihn über den Meta-Erfolg "Ruhm des Schlachtzüglers der Drachenseele".',
 	101821: 'Implementiert seit: Patch 4.3<br /><br /><b>Info:</b> Belohnung für die besten PvP-Spieler am Ende der 10. Arena Saison.',
-	110039: 'Implementiert seit: Patch 4.3<br />Boss-Drop: Ultraxion<br />Ort: 5. Boss Drachenseele - Schlachtzug für Stufe 85<br />Dropchance: bisher unbekannt<br /><br /><b>Info:</b> Die Gerüchte haben sich bestätigt. Bei diesem seltenen Beutestück handelt es sich tatsächlich um einen Drop-Gegenstand von Ultraxion.',
+	110039: 'Implementiert seit: Patch 4.3<br />Boss-Drop: Ultraxion<br />Ort: 5. Boss Drachenseele - Schlachtzug für Stufe 85<br />Dropchance: sehr gering - ultra rare (10er- als auch 25er-Schlachtzugsversion)<br /><br /><b>Info:</b> Die Gerüchte haben sich bestätigt. Bei diesem seltenen Beutestück handelt es sich tatsächlich um einen Drop-Gegenstand von Ultraxion. Dabei spielt es keine Rolle, ob Ihr den Drachen im normalen oder heroischen Modus umnietet - die Dropchance ist in beiden Versionen sehr gering.',
 	101573: 'Implementiert seit: Patch 4.3<br />Trading Card Game: Thron der Gezeiten',
 	102514: 'Implementiert seit: Patch 4.3<br />Trading Card Game: Krone des Himmels',
 	102488: 'Implementiert seit: Patch 4.3<br />Trading Card Game: Gruft der Vergessenen',
@@ -321,7 +190,7 @@ var gDescriptions = {
 	84492: 'Erfolg: <a target="_new" class=\"guide\" href="http://de.wowhead.com/achievement=5449">Felsliebhaber</a><br /><br /><b>Info:</b> Habt Ihr Euch in Tiefenheim so weit vorgequestet, dass Ihr die täglichen Aufgaben für die Fraktion Therazane annehmen könnt, seid Ihr auch in der Lage Kieselchen für Euch zu gewinnen. Absolviert zehn Mal die Daily <a target="_new" href="http://de.wowhead.com/quest=26710">"In den Tiefen verloren"</a>, um den Erfolg "Felsliebhaber" zu meistern und damit Kiselchen als Belohnung zu erhalten.',
 	84752: 'Beruf: Archäologie<br />Fragmente: 85 x Fossilien<br /><br /><b>Info:</b> Die meisten Archäologen finden den kleinen Knochenraptor häufig direkt zu Beginn ihrer Buddelkariere. Stöbert Ihr oft in fossilen Ruinen, sollte Ihr Forschungsprojekt für das Jungtier schnell im Auftragsbuch haben.<br /><br />Guide: <a target="_new" class=\"guide\" href="http://ninjalooter.de/15107/wow-rare-und-epische-archaologie-items/">Rare und epische Archäologie-Items</a>',
 	89039: 'Gildenerfolg: Vereinte Nationen <a target="_new" class=\"guide\" href="http://de.wowhead.com/achievement=5892">(Horde)</a> <a target="_new" class=\"guide\" href="http://de.wowhead.com/achievement=5812">(Allianz)</a><br />Händler: Gildenhändler<br />Kosten: 270 Gold<br /><br /><b>Info:</b> Schafft Ihr es mit Hilfe Eurer Gildenkollegen bei 55 Fraktionen einen ehrfürchtigen Ruf vorzuweisen, meistert Ihr den Gildenerfolg "Vereinte Nationen" und schaltet damit beim Händler das dunkle Phönixküken frei.',
-	89472: 'HORDE:<br />Ruf: Höllschreis Hand - Wohlwollend<br />Händler: <a target="_new" href="http://de.wowhead.com/npc=48531">Pogg</a> auf der Halbinsel Tol Barad<br />Kosten: 50 Belobigungsabzeichen von Tol Barad<br /<br />ALLIANZ:<br />Ruf: Wächter von Baradin - Wohlwollend<br />Händler: <a target="_new" href="http://de.wowhead.com/npc=47328">Rüstmeister Brazie</a> auf der Halbinsel von Tol Barad<br />Kosten: 50 Belobigungsabzeichen von Tol Barad<br /><br /><b>Info:</b> Die Belobigungsabzeichen erhaltet Ihr über tägliche Quests auf der Insel von Tol Barad - ein PvP-Eiland für Helden der Stufe 85.',
+	89472: '<b>HORDE:</b><br />Ruf: Höllschreis Hand - Wohlwollend<br />Händler: <a target="_new" href="http://de.wowhead.com/npc=48531">Pogg</a> auf der Halbinsel Tol Barad<br />Kosten: 50 Belobigungsabzeichen von Tol Barad<br /><br /><b>ALLIANZ:</b><br />Ruf: Wächter von Baradin - Wohlwollend<br />Händler: <a target="_new" href="http://de.wowhead.com/npc=47328">Rüstmeister Brazie</a> auf der Halbinsel von Tol Barad<br />Kosten: 50 Belobigungsabzeichen von Tol Barad<br /><br /><b>Info:</b> Die Belobigungsabzeichen erhaltet Ihr über tägliche Quests auf der Insel von Tol Barad - ein PvP-Eiland für Helden der Stufe 85.',
 	89670: 'Gildenerfolg: <a target="_new" class=\"guide\" href="http://de.wowhead.com/achievement=5144">Tierbeseitigungsbrigade</a><br />Händler: Gildenhändler<br />Kosten: 300 Gold<br /><br /><b>Info:</b> Beseitigt Eure Gilde 50.000 Kleintiere, meistert Ihr den Erfolg "Tierbeseitigungsbrigade" und schaltet dadurch das Gürteltierjunges beim Händler frei.',
 	90523: 'Beruf: Archäologie<br />Fragmente: 100 x Zwergenfragmente<br /><br /><b>Info:</b> Sucht vor allem in den Östlichen Königreichen in den Ruinen, da hier die meisten Zwergenartefakte versteckt liegen.<br /><br />Guide: <a target="_new" class=\"guide\" href="http://ninjalooter.de/15107/wow-rare-und-epische-archaologie-items/">Rare und epische Archäologie-Items</a>',
 	90637: 'Gebietsdrop: Halbinsel von Tol Barad<br />Gegner: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=47676">Baradinfuchs</a><br />Dropchance: 0,1%<br /><br /><b>Info:</b> Auf der Insel gibt es insgesamt nur 16 Füchse. In Verbindung mit der eh schon sehr geringen Dropchance, ist hier besonders viel Geduld und Ausdauer gefragt. Im Auktionshaus werdet Ihr das Kerlchen leider nicht finden, da es beim Aufheben gebunden, damit also nicht handelbar ist.',
@@ -345,12 +214,69 @@ var gDescriptions = {
 	98587: 'Beruf: Archäologie<br />Fragmente: 100 x Trollfragmente<br /><br /><b>Info:</b> Während Ihr auf der Suche nach dem epischen Troll-Artefakt <a target="_new" href="http://de.wowhead.com/spell=90608">Zinrokh, der Weltenzerstörer</a> seid, werdet Ihr mehr oder weniger zwangsweise über das Projekt der Statuette stolpern. Die meisten Trollframente findet Ihr in den Östlichen Königreichen.<br /><br />Guide: <a target="_new" class=\"guide\" href="http://ninjalooter.de/15107/wow-rare-und-epische-archaologie-items/">Rare und epische Archäologie-Items</a>',
 	
 	//Ältere Reittiere
+	101542: 'Boss-Drop: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=52530">Alysrazar</a><br />Ort: Feuerlande - Schlachtzug für Stufe 85<br />Dropchance: 2%',
+	101282: 'Erfolg: <a target="_new" class\"guide\" href="http://de.wowhead.com/achievement=6003">Zwielichtdrache des boshaften Gladiators</a> (Heldentat)<br /><br /><b>Info:</b> Belohnung für die besten PvP-Spieler am Ende der 9. Arena Saison.',
+	100333: 'Erfolg: <a target="_new" class=\"guide\" href="http://de.wowhead.com/achievement=5325">Veteran der Horde</a><br /><br /><b>Info:</b> Seid Ihr ein echter PvP-Held erhaltet Ihr für 75 Siege in gewerteten Schlachtfeldern nicht nur den Titel <a target="_new" href="http://de.wowhead.com/title=194">"Veteran der Horde"</a> sondern auch noch den boshaften Kriegswolf. Das Reittier ist an Euren Battle-net-Account gebunden; kann also an jeden Eurer Charaktere weitergereicht werden.',
+	100332: 'Erfolg: <a target="_new" class=\"guide\" href="http://de.wowhead.com/achievement=5328">Veteran der Allianz</a><br /><br /><b>Info:</b> Seid Ihr ein echter PvP-Held erhaltet Ihr für 75 Siege in gewerteten Schlachtfeldern nicht nur den Titel <a target="_new" href="http://de.wowhead.com/title=193">"Veteran der Allianz"</a> sondern auch noch das boshafte Schlachtross. Das Reittier ist an Euren Battle.net-Account gebunden; kann also an jeden Eurer Charaktere weitergereicht werden.',
+	98718: 'Rar-Mob Drop: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=50005">Poseidus</a><br />Ort: Schimmernde Weiten in Vashjir in etwa bei den Koordinaten [46,49] [67,42] [58,82] [38,66] und in den Abyssischen Tiefren bei [42,74]<br/>Dropchance: 100%<br /><br /><b>Info:</b> Das rare Seepferdchen Poseidus zieht seine Runden gelegentlich an einem von fünf unterschiedlichen Orten in Vashjir. Solltet Ihr den seltenen Meeresbewohner zu Gesicht bekommen und gen Jenseits befördern, findet Ihr auch immer das Unterwasserreittier.<br /><br />ACHTUNG: Dieses Reittier ist im Gegensatz zu seinen Rar-Mob Kollegen erst beim Anwenden gebunden; kann also frei gehandelt werden.',
+	98204: 'Gebietsdrop: ZulAman - Heroische 5-Spieler-Instanz für Stufe 85<br />Enthalten in: <a target="_new" class=\"guide\" href="http://de.wowhead.com/object=186672">Kashas Tasche</a><br />Dropchance: 100%<br /><br /><b>Info:</b> Schafft Ihr es nach Öffnung der Tore ZulAmans, die ersten vier Bosse innerhalb der angegebenen Zeitspanne zu töten und damit die vier Gefangenen zu retten, gewährt Euch der letzte befreite NPC eine Belohnung: Kashas Tasche. Darin enthalten: ein Kampfbär der Amani. Da es sich nur eum ein einziges Exemplar handelt, müsst Ihr  mit allen Spielern in Eurer Gruppe um den Bären würfeln.',
+	97560: 'Erfolg: <a target="_new" class=\"guide\" href="http://de.wowhead.com/achievement=5828">Ruhm des Schlachtzüglers der Feuerlande</a><br /><br /><b>Info:</b> Meistert Ihr alle Raid-Erfolge in den Feuerlanden meistert Ihr nicht nur den Meta-Erfolg, sondern erhaltet auch den Verderbten Feuerfalken als Belohnung.',
+	97493: 'Boss-Drop: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=52409">Ragnaros</a><br />Ort: Feuerlande - Schlachtzug für Stufe 85<br />Dropchance: 100% auf heroisch - 1% auf normal<br /><br /><b>Info:</b> Ein garantierter Drop von Ragnaros, besiegt Ihr ihn im heroischen Modus; ein sehr seltenes Fundstück beim Endboss der Feuerlande, schickt Ihr ihn im normalen Modus gen Jenseits.',
+	97359: 'Erfolg: <a target="_new" class=\"guide\" href="http://de.wowhead.com/achievement=5866">Die Offensive an der Geschmolzenen Front</a><br /><br /><b>Info:</b> Absolviert Ihr alle Quest-Stufen in der Daily-Zone der Feuerlande, erhaltet Ihr als Belohnung einen feurigen Hippogryphen.',
+	96499: 'Boss-Drop: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=52059">Hohepriesterin Kilnara</a><br />Ort: ZulAman - heroische 5-Spieler-Instanz für Stufe 85<br />Dropchance: 1%',
+	96491: 'Boss-Drop: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=52151">Blutfürst Mandokir</a><br />Ort: ZulAman - heroische 5-Spieler-Instanz für Stufe 85<br />Dropchance: 1%',
+	93644: 'Gildenerfolg: <a target="_new" class=\"guide\" href="http://de.wowhead.com/achievement=5492">Gildenstufe 25</a><br />Ruf: Gilde - Ehrfürchtig<br />Händler: Gildenhändler<br />Kosten: 1.350 Gold<br /><br /><b>Info:</b> Erreicht Eure Gilde Stufe 25, schaltet Ihr beim Händler automatisch den Vernichter der Korkron frei. Kaufen könnt Ihr Euch den Skorpion jedoch erst, wenn Ihr Euch einen ehrfürchtigen Ruf bei Eurer Gilde erarbeitet habt.',
+	90621: 'Gildenerfolg: <a target="_new" class=\"guide\" href="http://de.wowhead.com/achievement=4912">Gildenstufe 25</a><br />Ruf: Gilde - Ehrfürchtig<br />Händler: Gildenhändler<br />Kosten: 1.350 Gold<br /><br /><b>Info:</b> Erreicht Eure Gilde Stufe 25, schaltet Ihr beim Händler automatisch den Goldkönig frei. Kaufen könnt Ihr Euch den Löwen jedoch erst, wenn Ihr Euch einen ehrfürchtigen Ruf bei Eurer Gilde erarbeitet habt.',
+	92232: 'Ruf: <a target="_new" class=\"guide\" href="http://de.wowhead.com/faction=1178">Höllschreis Hand</a> - Ehrfürchtig<br />Händler: <a target="_new" href="http://de.wowhead.com/npc=48531">Pogg</a><br />Ort: Halbinsel von Tol Barad bei den Koordinaten [55,81]<br />Kosten: 165 Belobigungsabzeichen von Tol Barad<br /><br /<b>Info:</b> Die Belobigungsabzeichen erhaltet Ihr über tägliche Quests auf der Insel von Tol Barad - ein PvP-Eiland für Helden der Stufe 85.',
+	92231: 'Ruf: <a target="_new" class=\"guide\" href0"http://de.wowhead.com/faction=1177">Wächter von Baradin</a> - Ehrfürchtig<br />Händler: <a target="_new" href="http://de.wowhead.com/npc=47328">Rüstmeiser Brazie</a><br />Ort: Halbinsel von Tol Barad bei den Koordinaten [73,63]<br />Kosten: 165 Belobigungsabzeichen von Tol Barad<br /><br /><b>Info:</b> Die Belobigungsabzeichen erhaltet Ihr über tägliche Quests auf der Insel von Tol Barad - ein PvP-Eiland für Helden der Stufe 85.',
+	92155: 'Beruf: Archäologie<br />Fragmente: 150 x Tolvir<br /><br /><b>Info:</b> Nur Archäologen dessen Fähigkeiten so gut sind, dass sie in Uldum buddeln können, finden mit Glück das Forschungsprojekt für die Drohne. Einmal im Auftragsbuch, müsst Ihr 150 Tolvir-Fragmente berappen, um es zusammenzusetzen.<br /><br />Guide: <a target="_new" class=\"guide\" href="http://ninjalooter.de/15107/wow-rare-und-epische-archaologie-items/">Rare und epische Archäologie-Items</a>',
+	88990: 'Gildenerfolg: <a target="_new" class=\"guide\" href="http://de.wowhead.com/achievement=4988">Gildenruhm des Kataklysmus-Schlachtzüglers</a><br />Händler: Gildenhändler<br />Kosten: 2.700 Gold<br /><br /><b>Info:</b> Meistert Ihr mit Eurer Gilde die Raid-Instanzen Pechschwingenabstieg, Thron der Vier Winde und die Bastion des Zwielichts, schaltet Ihr beim Gildenhändler den dunklen Phönix frei. Auch Gildenmitglieder, die nicht am Meistern des Erfolges beteiligt waren, können sich das schmucke Tier kaufen. Allerdings benötigen alle Spieler einen ehrfürchtigen Ruf.',
+	88749: 'Ruf: <a target="_new" class=\"guide\" href="http://de.wowhead.com/faction=1173">Ramkahen</a> - Ehrfürchtig<br />Händler: <a target="_new" href="http://de.wowhead.com/npc=48617">Schmied Abasi</a><br />Ort: Ramaken in Uldum bei den Koordinaten [54,33]<br />Kosten: 100 Gold<br /><br /><b>Info:</b> Absolviert Ihr Quests in Uldum (Gebiet für Stufe 83-84) erhaltet Ihr Rufpunkte für die Fraktion Ramkahen. Um Euch aber ein ehrfürchtiges Ansehen zu erarbeiten, müsst Ihr früher oder später auf den <a target="_new" href="http://de.wowhead.com/item=65904">Wappenrock der Ramkahen</a> zurückgreifen. Tragt Ihr ihn während Eurer Ausflüge in Cataclysm-Instanzen erhaltet Ihr wertvolle Rufpunkte für die Fraktion.',
+	88748: 'Ruf: <a target="_new" class=\"guide\" href="http://de.wowhead.com/faction=1173">Ramkahen</a> - Ehrfürchtig<br />Händler: <a target="_new" href="http://de.wowhead.com/npc=48617">Schmied Abasi</a><br />Ort: Ramaken in Uldum bei den Koordinaten [54,33]<br />Kosten: 100 Gold<br /><br /><b>Info:</b> Absolviert Ihr Quests in Uldum (Gebiet für Stufe 83-84) erhaltet Ihr Rufpunkte für die Fraktion Ramkahen. Um Euch aber ein ehrfürchtiges Ansehen zu erarbeiten, müsst Ihr früher oder später auf den <a target="_new" href="http://de.wowhead.com/item=65904">Wappenrock der Ramkahen</a> zurückgreifen. Tragt Ihr ihn während Eurer Ausflüge in Cataclysm-Instanzen erhaltet Ihr wertvolle Rufpunkte für die Fraktion.',
+	88746: 'Boss-Drop: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=43214">Plattenhaut</a><br />Ort: Der Steinerne Kern - 5-Spieler-Instanz für Stufe 82-84<br />Dropchance: 0,8%<br /><br /><b>Info:</b> Es spielt keine Rolle, ob Ihr Plattenhaut im normalen oder heroischen Modus umnietet; die Dropchance ist bei beiden Modi gleich hoch.',
+	88744: 'Boss-Drop: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=46753">AlAkir</a><br />Ort: Thron der Vier Winde - Schlachtzug für Stufe 85<br />Dropchance: 0,7%',
+	88742: 'Boss-Drop: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=43873">Altairus</a><br />Ort: Der Vortexgipfel - 5-Spieler-Instanz für Stufe 82-84<br />Dropchance: 0,8%<br /><br /><b>Info:</b> Es spielt keine Rolle, ob Ihr Altairus im normalen oder heroischen Modus umnietet; die Dropchance ist bei beiden Modi gleich hoch.',
+	88741: 'HORDE:<br />Ruf: Höllschreis Hand - Ehrfürchtig<br />Händler: <a target="_new" href="http://de.wowhead.com/npc=48531">Pogg</a> auf der Halbinsel Tol Barad<br />Kosten: 200 Belobigungsabzeichen von Tol Barad<br /<br /><br />ALLIANZ:<br />Ruf: Wächter von Baradin - Ehrfürchtig<br />Händler: <a target="_new" href="http://de.wowhead.com/npc=47328">Rüstmeister Brazie</a> auf der Halbinsel von Tol Barad<br />Kosten: 200 Belobigungsabzeichen von Tol Barad<br /><br /><b>Info:</b> Die Belobigungsabzeichen erhaltet Ihr über tägliche Quests auf der Insel von Tol Barad - ein PvP-Eiland für Helden der Stufe 85.',
+	88718: 'Rar-Mob Drop: <a target="_new" class=\"guide\" href0"http://de.wowhead.com/npc=50062">Aenoaxx</a><br />Ort: Tiefenheim in etwa bei den Koordinaten [46,45] [52,44] [53,64] [48,58] [44,60] [43,48]<br />Dropchance: 100%<br /><br /><b>Info:</b> Der rare Drache Aeonaxx zieht seine Runden gelegentlich in luftiger Höhe um den Tempel der Erde in Tiefenheim herum. Solltet Ihr den seltenen Drachen zu Gesicht bekommen und gen Jenseits befördern, findet Ihr auch immer das Flugtier.',
+	88335: 'Erfolg: <a target="_new" class=\"guide\" href="http://de.wowhead.com/achievement=4853">Ruhm des Kataklysmus-Schlachtzüglers</a><br /><br /><b>Info:</b> Absolviert Ihr alle Raid-Erfolge der Cataclysm-Instanzen, erhaltet Ihr als Belohnung den Drachen des Ostwinds.',
+	88331: 'Erfolg: <a target="_new" class=\"guide\" href="http://de.wowhead.com/achievement=4845">Heldenruhm des Kataklysmus</a><br /><br /><b>Info:</b> Absolviert Ihr alle Dungeon-Erfolge der 5-Spieler-Instanzen in Cataclysm, erhaltet Ihr als Belohnung den Vulkansteindrachen.',
+	87091: 'Ruf: <a target="_new" class=\"guide\" href="http://de.wowhead.com/faction=1133">Bilgewasserkartell</a> - Ehrfürchtig<br />Händler: <a target="_new" href="http://de.wowhead.com/npc=48510">Kall Goldkettchen</a><br />Ort: Orgrimmar im südlichen Teil vom Tal der Geister bei den Koordinaten [36,87]<br />Kosten: 8 Gold<br /><br /><b>Info:</b> Genießt Ihr ein ehrfürchtiges Ansehen bei den Goblins des Bilgewaserkartells oder Ihr seid sogar selber einer von ihnen, verkauft Euch Kall Goldkettchen in Orgrimmar das epische Trike für 8 Goldstücke.',
+	87090: 'Ruf: <a target="_new" class=\"guide\" href="http://de.wowhead.com/faction=1133">Bilgewasserkartell</a> - Ehrfürchtig<br />Händler: <a target="_new" href="http://de.wowhead.com/npc=48510">Kall Goldkettchen</a><br />Ort: Orgrimmar im südlichen Teil vom Tal der Geister bei den Koordinaten [36,87]<br />Kosten: 80 Silber<br /><br /><b>Info:</b> Genießt Ihr ein ehrfürchtiges Ansehen bei den Goblins des Bilgewaserkartells oder Ihr seid sogar selber einer von ihnen, verkauft Euch Kall Goldkettchen in Orgrimmar das Trike für 80 Silberstücke.',
+	84751: 'Beruf: Archäologie<br />Fragmente: 100 x Fossilien<br /><br /><b>Info:</b> Direkt zu Beginn Eurer archäologischen Karriere findet Ihr eine Unmenge an fossilen Artefakten. Dementsprechend ist dieser Raptor häufig recht schnell in einem Auftragsbuch.<br /><br />Guide: <a target="_new" class=\"guide\" href="http://ninjalooter.de/15107/wow-rare-und-epische-archaologie-items/">Rare und epische Archäologie-Items</a>',
+	75596: 'Beruf: Schneiderei<br />Mindestfertigkeit: 425<br />Materialien: 1 x Mondgespinst, 1 x Zaubertuch, 1 x Schwarztuch, 4 x Gefrorene Kugeln<br /><br /><b>Info:</b> Die Materialien stammen alle aus Nordend; ein Besuch auf dem Eiland ist somit unerlässlich.<br /><br />ACHTUNG: Der Teppich kann nur von Schneidern erlernt werden! Habt Ihr Schneiderei nicht als Beruf, könnt Ihr das Fluggerät auch nicht Eurer Sammlung hinzufügen.',
+	75207: 'Quest: <a target="_new" class=\"guide\" href="http://de.wowhead.com/quest=25371">Der abyssische Ritt</a><br />Mindeststufe: 80<br />Questgeber: <a target="_new" href="http://de.wowhead.com/npc=41248">Moanah Sturmhuf</a> im Tangtharwald in Vashjir bei den Koordinaten [46,47]<br /><br /><b>Info:</b> Das Unterwaserreittier erhaltet Ihr bereits nach einigen wenigen absolvierten Aufträgen als Questbelohnung in Vashjir.',
+	73313: 'Quest: <a target="_new" class=\"guide\" href="http://de.wowhead.com/quest=24915">Zusammenkunft mit Mograine</a><br />Mindeststufe: 80<br />Questgeber: <a target="_new" href0"http://de.wowhead.com/npc=37120">Hochlord Darion Mograine</a> in der Eiskronenzitadelle - Schlachtzug für Stufe 80<br /><br /><b>Info:</b> Tötet Ihr den Lichkönig (Endboss in der Eiskronenzitadelle) während ein Spieler in Eurer Gruppe die legendäre Zweihandaxt <a target="_new" href="http://de.wowhead.com/item=49623">Schattengram</a> trägt, erweitert sich die Beute des Bösewichts um eine <a target="_new" href="http://de.wowhead.com/item=51316">unversiegelte Truhe</a>. Bringt den Gegenstand zu Darion Mograine, um fünf exklusive Items abzustauben - unter anderem das Todesstreitross.<br /><br />ACHTUNG: Alle Gegenstände, die Ihr durch das Abgeben der Truhe erhaltet, sind BoE, beim Anwenden gebunden und damit frei handelbar. Bedenkt außerdem, dass pro Schattengrambesitzer nur ein einziges Mal eine Truhe gefunden werden kann. Abfarmen ist somit nicht möglich.',
+	72808: 'Erfolg: <a target="_new" class=\"guide\" href="http://de.wowhead.com/achievement=4602">Ruhm des Schlachtzüglers von Eiskrone (10 Spieler)</a><br /><br /><b>Info:</b> Absolviert Ihr im 10-Spieler-Modus alle Erfolge der Raid-Instanz Eiskronenzitadelle (Stufe 80), erhaltet Ihr den blutgebadeten Frostbrutbezwinger.',
+	72807: 'Erfolg: <a target="_new" class=\"guide\" href=http://de.wowhead.com/achievement=4603">Ruhm des Schlachtzüglers von Eiskrone (25 Spieler)</a><br /><br /><b>Info:</b> Absolviert Ihr im 25-Spieler-Modus alle Erfolge der Raid-Instanz Eiskronenzitadelle (Stufe 80), erhaltet Ihr den eisbeschlagenen Frostbrutbezwinger.',
+	72286: 'Boss-Drop: <a target="_new2 class=\"guide\" href="http://de.wowhead.com/npc=36597">Der Lichkönig</a> (heroisch)<br />Ort: Eiskronenzitadelle - Schlachtzug für Stufe 80<br />Dropchance: gering<br /><br /><b>Info:</b> Habt Ihr vor dem Kataklysmus den Lichkönig in der 25er-Version auf heroisch gelegt, war Unbesiegbar immer mit von der Partie. Mit der dritten WoW-Erweiterung wurde die DRopchsance jedoch von 100 Prozent auf selten heruntegesetzt. Die Spieler sind stärker geworden, der Kampf gegen den Lichkönig somit einfacher; Unbesiegbar soll aber trotzdem eine echte Rarität bleiben. Deshalb die drastische Reduzierung der Dropchance.',
+	71342: 'Feiertag: Liebe liegt in der Luft<br />Enthalten in: <a target="_new" class=\"guide\" href="http://de.wowhead.com/item=54537">Herzförmige Schachtel</a><br />Chance auf die Raktete in der Schachtel: 0,16%<br /><br /><b>Info:</b> Besiegt Ihr während des Liebe liegt in der Luft-Events mit einer Dungeonfinder-Gruppe das Event-Boss Trio in der Burg Schattenfang, erhaltet Ihr einmal tägliuch eine herzförmige Schachten. Darin kan mit einer extrem geringen Wahrscheinlichkeit die Liebesrakete enthalten sein.',
+	69395: 'Boss-Drop: Onyxia<br />Ort: Onyxias Hort im Süden der Düstermarschen - Schlachtzug für Stufe 80<br />Dropchance: 0,2%',
+	67466: 'Event: Argentumturnier<br />Händler: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=34885">Dame Evniki Kapsalis</a> auf dem Turnierplstz im Nordosten von Eiskrone bei den Koordinaten [69,23]<br />Kosten: 100 <a target="_new" href="http://de.wowhead.com/currency=2412>Siegel des Champions</a><br /><br /><b>Info:</b> Absolviert Ihr auf dem Argentumturnier alle Quests bis hin zum Champion, schaltet Ihr die Möglichkeit frei, endlich Siegel des Champions über Daily Quests zu ergattern. Spart Ihr Euch 100 Stück an, könnt Ihr Euch bei Dame Evniki Kapsalis das Argentumschlachtross kaufen.',
+	66091: 'Event: Argentumturnier<br />Händler: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=34772">Vasarin Morgenröte</a> (Horde)<br />Kosten: 100 <a target="_new" href="http://de.wowhead.com/currency=241">Siegel des Champions</a><br />Turnierfraktion: Sonnenhäscher<br /><br /><b>Info:</b> Steigt auf dem Argentumturnier zum Champion auf und stellt Euch mit jeder einzelnen Fraktion des Spektakels so gut, dass sie Euch ihre Waren anbieten. Für 100 Siegel des Champions erhaltet Ihr bei jeder Fraktion ein Reittier. Die Siegel ergattert Ihr wiederum durch tägliche Quests auf dem Gelände.',
+	66088: 'Event: Argentumturnier<br />Händler: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=34772">Vasarin Morgenröte</a> (Horde)<br />Kosten: 150 <a target="_new" href="http://de.wowhead.com/currency=241">Siegel des Champions</a><br />Turnierfraktion: Sonnenhäscher<br /><br /><b>Info:</b> Steigt auf dem Argentumturnier zum Champion auf und stellt Euch mit jeder einzelnen Fraktion des Spektakels so gut, dass sie Euch ihre Waren anbieten. Für 150 Siegel des Champions erhaltet Ihr bei Vasarin Morgenröte einen Drachenfalken. Die Siegel ergattert Ihr wiederum durch tägliche Quests auf dem Gelände.',
+	66090: 'Event: Argentumturnier<br />Händler: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=34881">Hiren Lehrensang</a> (Allianz)<br />Kosten: 100 <a target="_new" href="http://de.wowhead.com/currency=241">Siegel des Champions</a><br />Turnierfraktion: Silberbund<br /><br /><b>Info:</b> Steigt auf dem Argentumturnier zum Champion auf und stellt Euch mit jeder einzelnen Fraktion des Spektakels so gut, dass sie Euch ihre Waren anbieten. Für 100 Siegel des Champions erhaltet Ihr bei jeder Fraktion ein Reittier. Die Siegel ergattert Ihr wiederum durch tägliche Quests auf dem Gelände.',
+	66087: 'Event: Argentumturnier<br />Händler: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=34881">Hiren Lehrensang</a> (Allianz)<br />Kosten: 150 <a target="_new" href="http://de.wowhead.com/currency=241">Siegel des Champions</a><br />Turnierfraktion: Silberbund<br /><br /><b>Info:</b> Steigt auf dem Argentumturnier zum Champion auf und stellt Euch mit jeder einzelnen Fraktion des Spektakels so gut, dass sie Euch ihre Waren anbieten. Für 150 Siegel des Champions erhaltet Ihr bei Hiren Lehrensang einen Hippogryphen. Die Siegel ergattert Ihr wiederum durch tägliche Quests auf dem Gelände.',
+	65646: 'Event: Argentumturnier<br />Händler: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=33553">Freka Blutaxt</a> (Horde)<br />Kosten: 500 Gold und 5 <a target="_new" href="http://de.wowhead.com/currency=241">Siegel des Champions</a><br />Turnierfraktion: Orgrimmar<br /><br /><b>Info:</b> Steigt auf dem Argentumturnier zum Champion auf und stellt Euch mit jeder einzelnen Fraktion des Spektakels so gut, dass sie Euch ihre Waren anbieten. Für 500 Gold und 5 Siegel des Champions erhaltet Ihr bei jeder Fraktion ein Reittier. Die Siegel ergattert Ihr wiederum durch tägliche Quests auf dem Gelände.',
+	65645: 'Event: Argentumturnier<br />Händler: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=33555">Eliza Killian</a> (Horde)<br />Kosten: 500 Gold und 5 <a target="_new" href="http://de.wowhead.com/currency=241">Siegel des Champions</a><br />Turnierfraktion: Unterstadt<br /><br /><b>Info:</b> Steigt auf dem Argentumturnier zum Champion auf und stellt Euch mit jeder einzelnen Fraktion des Spektakels so gut, dass sie Euch ihre Waren anbieten. Für 500 Gold und 5 Siegel des Champions erhaltet Ihr bei jeder Fraktion ein Reittier. Die Siegel ergattert Ihr wiederum durch tägliche Quests auf dem Gelände.',
+	65644: 'Event: Argentumturnier<br />Händler: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=33554">Samamba</a> (Horde)<br />Kosten: 500 Gold und 5 <a target="_new" href="http://de.wowhead.com/currency=241">Siegel des Champions</a><br />Turnierfraktion: Senjin<br /><br /><b>Info:</b> Steigt auf dem Argentumturnier zum Champion auf und stellt Euch mit jeder einzelnen Fraktion des Spektakels so gut, dass sie Euch ihre Waren anbieten. Für 500 Gold und 5 Siegel des Champions erhaltet Ihr bei jeder Fraktion ein Reittier. Die Siegel ergattert Ihr wiederum durch tägliche Quests auf dem Gelände.',
+	65643: 'Event: Argentumturnier<br />Händler: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=33310">Derrick Scheckenbart</a> (Allianz)<br />Kosten: 500 Gold und 5 <a target="_new" href="http://de.wowhead.com/currency=241">Siegel des Champions</a><br />Turnierfraktion: Eisenschmiede<br /><br /><b>Info:</b> Steigt auf dem Argentumturnier zum Champion auf und stellt Euch mit jeder einzelnen Fraktion des Spektakels so gut, dass sie Euch ihre Waren anbieten. Für 500 Gold und 5 Siegel des Champions erhaltet Ihr bei jeder Fraktion ein Reittier. Die Siegel ergattert Ihr wiederum durch tägliche Quests auf dem Gelände.',
+	65642: 'Event: Argentumturnier<br />Händler: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=33650">Rillie Spindelnuss</a> (Allianz)<br />Kosten: 500  und 5 <a target="_new" href="http://de.wowhead.com/currency=241">Siegel des Champions</a><br />Turnierfraktion: Gnomeregan<br /><br /><b>Info:</b> Steigt auf dem Argentumturnier zum Champion auf und stellt Euch mit jeder einzelnen Fraktion des Spektakels so gut, dass sie Euch ihre Waren anbieten. Für 500 Gold und 5 Siegel des Champions erhaltet Ihr bei jeder Fraktion ein Reittier. Die Siegel ergattert Ihr wiederum durch tägliche Quests auf dem Gelände.',
+	65641: 'Event: Argentumturnier<br />Händler: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=33556">Doru Donnerhorn</a> (Horde)<br />Kosten: 500 Gold und 5 <a target="_new" href="http://de.wowhead.com/currency=241">Siegel des Champions</a><br />Turnierfraktion: Donnerfels<br /><br /><b>Info:</b> Steigt auf dem Argentumturnier zum Champion auf und stellt Euch mit jeder einzelnen Fraktion des Spektakels so gut, dass sie Euch ihre Waren anbieten. Für 500 Gold und 5  Siegel des Champions erhaltet Ihr bei jeder Fraktion ein Reittier. Die Siegel ergattert Ihr wiederum durch tägliche Quests auf dem Gelände.',
+	65640: 'Event: Argentumturnier<br />Händler: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=33307">Korporal Arthur Flew</a> (Allianz)<br />Kosten: 500 Gold und 5 <a target="_new" href="http://de.wowhead.com/currency=241">Siegel des Champions</a><br />Turnierfraktion: Sturmwind<br /><br /><b>Info:</b> Steigt auf dem Argentumturnier zum Champion auf und stellt Euch mit jeder einzelnen Fraktion des Spektakels so gut, dass sie Euch ihre Waren anbieten. Für 500 Gold und 5 Siegel des Champions erhaltet Ihr bei jeder Fraktion ein Reittier. Die Siegel ergattert Ihr wiederum durch tägliche Quests auf dem Gelände.',
+	65639: 'Event: Argentumturnier<br />Händler: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=33557">Trellis Morgensonne</a> (Horde)<br />Kosten: 500 Gold und 5 <a target="_new" href="http://de.wowhead.com/currency=241">Siegel des Champions</a><br />Turnierfraktion: Silbermond<br /><br /><b>Info:</b> Steigt auf dem Argentumturnier zum Champion auf und stellt Euch mit jeder einzelnen Fraktion des Spektakels so gut, dass sie Euch ihre Waren anbieten. Für 500 Gold und 5 Siegel des Champions erhaltet Ihr bei jeder Fraktion ein Reittier. Die Siegel ergattert Ihr wiederum durch tägliche Quests auf dem Gelände.',
+	65638: 'Event: Argentumturnier<br />Händler: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=33653">Rook Falkenfaust</a> (Allianz)<br />Kosten: 500 Gold und 5 <a target="_new" href="http://de.wowhead.com/currency=241">Siegel des Champions</a><br />Turnierfraktion: Darnassus<br /><br /><b>Info:</b> Steigt auf dem Argentumturnier zum Champion auf und stellt Euch mit jeder einzelnen Fraktion des Spektakels so gut, dass sie Euch ihre Waren anbieten. Für 500 Gold und 5 Siegel des Champions erhaltet Ihr bei jeder Fraktion ein Reittier. Die Siegel ergattert Ihr wiederum durch tägliche Quests auf dem Gelände.',
+	65637: 'Event: Argentumturnier<br />Händler: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=33657">Irisee</a> (Allianz)<br />Kosten: 500 Gold und 5 <a target="_new" href="http://de.wowhead.com/currency=241">Siegel des Champions</a><br />Turnierfraktion: Exodar<br /><br /><b>Info:</b> Steigt auf dem Argentumturnier zum Champion auf und stellt Euch mit jeder einzelnen Fraktion des Spektakels so gut, dass sie Euch ihre Waren anbieten. Für 500 Gold und 5 Siegel des Champions erhaltet Ihr bei jeder Fraktion ein Reittier. Die Siegel ergattert Ihr wiederum durch tägliche Quests auf dem Gelände.',
+	64977: 'Händler: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=4731">Zachariah Post</a><br />Ort: Brill in Tirisfal bei den Koordinaten [62,52]<br />Ruf: Unterstadt - Ehrfürchtig oder Ihr selber seid Untoter<br />Kosten: 1 Gold',
+	66847: 'Händler: <a target="_new" class=\"guide\" href="http://de.wowhead.com/npc=4730">Lelanai</a><br />Ort: Enklave des Cenarius in Darnasus bei den Koordinaten [43,33]<br />Ruf: Darnassus - Ehrfürchtig oder Ihr selber seid Nachtelfe<br />Kosten: 1 Gold',
+	64731: 'Beruf: Angeln<br />Geangelt in: allen Fischschwärmen in Nordend und Cataclysm<br /><br /><b>Info:</b> Das Objekt der Begierde für jeden Angler. Mit besonders viel Glück fischt Ihr die Reitschildkröte aus einem Fischkreis in Nordend oder Cataclysm. An Land ist der Vierbeiner ein sehr träges, wenn auch extrem fesches Reittier. Unter Wasser entfaltet die Schildkröte ihr volles Potential und düst mit Euch im Affenzahn durch jedes Gewässer Azeroths.<br /><br />Guide: <a target="_new" class=\"guide\" href="http://elsanglin.com/catching_sea_turtle.html">Els Anglin</a>',
+	
+	
 };
 
 var gRaceHordeIds = {
 	// HORDE
 	ids: [92396, 92398, 101989, 95909,
-	68056, 68056, 100333, 35020, 17463, 64656, 18990, 6654, 17464, 17450, 63642, 66091, 23509, 64659, 87090, 87091, 18992, 18989, 23249, 65641, 23248, 23247,
+	68056, 68056, 100333, 35020, 17463, 64656, 18990, 6654, 17464, 17450, 63642, 66091, 23509, 64659, 87090, 87091, 18992, 18989, 23249, 65641, 23248, 23247, 104049,
 	18991, 17465, 35018, 66846, 23246, 63635, 34795, 16080, 17462, 22722, 16084, 63643, 12141, 23250, 65646, 23252, 35025, 35028, 35027, 23242, 23243, 33660, 65644, 65639,
 	23251, 68056, 35022, 22718, 22721, 22724, 64658, 64977, 8395, 92232, 6653, 10796, 93644, 10799, 580, 64657, 65645, 74918, 16081, 63640, 23241,
 	32244, 61230, 32245, 32243, 32296, 32296, 32297, 32246, 32295, 60119, 61467, 61469, 60116, 63641, 59797, 59793, 59788, 55531, 61447, 66088, 61997,
@@ -361,7 +287,7 @@ var gRaceHordeIds = {
 
 var gRaceAllianceIds = {
 	// ALLIANCE
-	ids: [92395, 92397, 101986, 95786,
+	ids: [92395, 92397, 101986, 95786, 104047,
 	68187, 68057, 100332, 10969, 34406, 6899, 458, 63637, 17459, 63639, 17460, 10789, 66847, 8394, 10793, 90621, 35710, 6777, 35713, 35712, 35714, 65637,
 	17453, 6648, 35711, 16082, 470, 63638, 63232, 66090, 10873, 472, 16083, 23238, 23221, 23222, 23239, 23225, 65638, 23227, 23219, 23338, 65643, 23223, 23240, 23229, 65640,
 	68057, 23228, 48027, 22723, 22720, 16055, 22719, 17461, 22717, 68188, 92231, 23510, 65642, 17454, 16056, 15779, 6898, 68187, 63636, 17229,
@@ -433,7 +359,7 @@ var gDecoratorAndFilters = [
 
 		{
 		name: "Event/Feiertag",
-		ids: [49379, 71342, 48025, 43900, 104049, 104047, 102349,
+		ids: [49379, 71342, 48025, 43900, 104049, 104047, 102349, 103125,
 		26045, 26529, 26533, 26541, 27570, 28738, 28739, 28740, 28871, 39709, 40613, 40614, 40634, 42609, 44369, 61725, 61773, 65381, 65382, 71840, 74932, 93817,
 		98079, 23811, 100330, 100684, 102350],
 		
@@ -552,7 +478,7 @@ var gDecoratorAndFilters = [
 	//Unbekannte Herkunft
 	{
 		name: "Unknown",
-		ids: [89931, 89929, 89930, 93815, 93818, 87863, 93461, 110029, 103125,
+		ids: [89931, 89929, 89930, 93815, 93818, 87863, 93461, 110029,
 		32345, 97501, 107517, 107516, 110051],
 		
 		decorator_text: "Herkunft bisher unbekannt"

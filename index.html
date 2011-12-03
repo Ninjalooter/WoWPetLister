@@ -358,6 +358,16 @@
 					$.cookie('pet_lister_realm', sRealm);
 					$.cookie('pet_lister_char', sChar);
 					
+					// Log the character into our internal database. No data except the region/realm/charcter is logged
+					jQuery.post(
+						window.location.origin != "http://ninjalooter.de" ? 'http://ninjalooter.de/WoWPetLister/api/log_request.php' : './api/log_request.php',
+						{
+							region: sRegion,
+							realm: sRealm,
+							character: sChar
+						}
+					);
+					
 					// Request the character data and parse the id list afterwards
 					jQuery.battlenet({
 						action: 'load-character-' + filterType,

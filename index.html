@@ -14,6 +14,8 @@
 		<script src="pet_lister.compiled.js" charset="latin1"></script>
 		<script src="pet_lister.ids.js"></script>
 		
+		<script src="pet_lister.popup.js"></script>
+		
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.3.0/mustache.min.js"></script>
 		
 		<script>
@@ -57,163 +59,7 @@
 			}
 			
 			
-			function popup_show(spell, character) {
-				var itemIds = gSpellsMapping[spell.id];
-				var region = $("#region").val(); // eu, us, kr, ...
-				var realm = $("#realm").val();
-				var faction = $.battlenet({action: 'get-faction-by-race', race:character.race}).toLowerCase();
-				
-				var popupWindow = $("#popup").attr('style', '').click(function() {
-					$(this).attr('style', 'display:none');
-				});
-				var popupContent = $("#popup .popup").empty(); // Overwrite click handler for the inner div element
-				popupContent.click(function(event) {
-					event.stopPropagation();
-				});
-				var tags = [];				
-				useDecorators(spell.id, function(decorator) {
-					tags.push(decorator.decorator_text);
-				});
-				
-				var data = {
-					spell_iconurl: wowhead_spellicon(spell),
-					spell_name: spell.name_dede,
-					links: [
-						{label: 'Wowhead', url: wowhead_spellurl(spell.id)},						
-						{label: 'Buffed.de', url: 'http://wowdata.buffed.de/?s=' + spell.id}
-					],
-					
-					// Tags
-					has_tags: tags.length > 0,
-					tags: tags,
-					
-					description_text: gDescriptions[spell.id]
-					
-				};
-				var template = "<div class='popup_head'>" +
-							   "<img alt='Spell Icon' src='{{{spell_iconurl}}}' />" + 
-							   " <span class=name>{{spell_name}}</span><br />" + 
-							   " <div>Links: {{#links}} <a target='_blank' href='{{{url}}}'>{{label}}</a>{{/links}}</div>" + 
-							   " {{#has_tags}}<div>Tags: {{#tags}}{{{.}}} {{/tags}}</div>{{/has_tags}}" + 
-							   "</div>" + 
-							   "<p>{{{description_text}}}</p>" + 
-							   "";
-				
-				
-				var html = Mustache.to_html(template, data);
-				popupContent.append(html);
-				
-				
-				
-				// Start AJAX Request to fetch ahspy-data
-				
-				if ( (region == "eu.battle.net" || region == "us.battle.net") && realm != "" ) {
-					var ahContainer = $("<div></div>");
-					popupContent.append(ahContainer);
-					
-					// Show header
-					var template = 
-						" <div>Auktionshauspreis der letzten 31 Tage</div>" + 
-						" <div>Realm: <b>{{realm}}</b></div>";
-					var data = {
-						realm: realm
-					};
-					ahContainer.append(Mustache.to_html(template, data));
-						
-					// Each spell can have multiple Items which provides the spell. Shows prices for each separately
-					jQuery.each(itemIds, function(i, itemId) {
-						var template = "<div>" +
-									   " <table class='popup_ahtable'><tr><td>Loading ...</td></tr></table>" + 
-						               " <a href={{{ahspy_link}}}>Daten (Quelle)</a> und <a href='http://www.ahspy.com/global/item/{{item_id}}' target=_blank>Globale Preisliste</a> von AHSpy" + 
-									   "</div>";
-						var data = {
-							ahspy_link: ahspy_itemurl(region, realm, faction, itemId),
-							item_id: itemId
-						};
-						var ahDiv = $(Mustache.to_html(template, data));
-						var table = $(".popup_ahtable", ahDiv);
-						ahContainer.append(ahDiv);
-					
-						$.ajax('http://api.ahspy.com/' + region.substr(0,2) + '/' + realm + '/item/' + itemId + '/monthly.json', {
-							jsonp: 'callback',
-							dataType: 'jsonp',
-							success: function(data) {
-								table.empty();
-								var headerLine = "<tr>" +
-									"<th>Fraktion</th>" + 
-									"<th class='qty'>Anzahl</th>" + 
-									
-									"<th>Min</th>" + 
-									"<th>Max</th>" + 
-									"<th>Durchschnitt</th>" +
-									
-								"</tr>";
-								table.append(headerLine);
-								
-								if ( (data.a == null && data.h == null && data.n == null) ||
-								     (data.a.qty == 0 && data.h.qty == 0 && data.n.qty == 0)) {
-									// Remove the table
-									table.detach();
-									
-									// If no table is left, remove the whole container
-									if ( $("table", ahContainer).length == 0 ) {
-										ahContainer.detach();
-									}
-									return;
-								}
-								
-								jQuery.each(data, function(factionShortCode, auctions) {
-									if ( auctions == null || auctions.qty == 0 ) return;
-									var tr = $("<tr></tr>");
-									
-									if ( factionShortCode == "a" ) {
-										tr.append("<td class='alliance'>Allianz</td>");
-									} 
-									else if ( factionShortCode == "h" ) {
-										tr.append("<td class='horde'>Horde</td>");
-									} else {
-										tr.append("<td class='neutral'>Neutral</td>");
-									}
-									
-									var priceFormat = function(n) {
-										var s = "" + n;
-										var copper = s.substr(s.length - 2, 2);
-										var silver = s.substr(s.length - 4, 2);
-										var gold = Number(s.substr(0, s.length - 4));
-										
-										
-										var result = "";
-										if ( gold > 0) result += "<span class=icon-gold>" + gold + "</span>";
-										if ( silver > 0) result += "<span class=icon-silver>" + silver + "</span>";
-										if ( copper > 0) result += "<span class=icon-copper>" + copper + "</span>";
-										return result;
-									};
-									
-									jQuery.each(['qty'], function(i, field) {
-										var td = $("<td></td>").addClass(field);
-										td.text(auctions[field]);
-										tr.append(td);
-									});
-									
-									jQuery.each(['min', 'max', 'avg'], function(i, field) {
-										var td = $("<td></td>").addClass(field).attr('style', 'width:120px; text-align:right');
-										td.html(priceFormat(auctions[field]));
-										tr.append(td);
-									});
-									table.append(tr);
-								});
-								
-							}
-						});	
-						
-					});
-					
-					
-
-				} else {
-					popupContent.append("AHSpy Data not supported in your region.");
-				}
-			}
+			
 			
 			
 			jQuery.fn.pet_lister = function(playerSpellList, character, spellIdList) {
@@ -468,22 +314,13 @@
 				<div id="buttons">
 					<button id="btn_scan"><img alt="Scannen." title="Scannen!" style="padding: 0pt 0px 0px 0pt;" src="scan_button4.png"/></button>
 				</div>
-				
 			
-				<div id="result_list">
-				
-				</div>
-				
+				<div id="result_list"></div>				
 			</div>
 
 			<div class="footer">
 				Von <a href="http://ninjalooter.de/" target="_blank">Ninjalooter.de</a> | Datenbank <a href="http://de.wowhead.com/" target="_blank">wowhead.com</a> | Preise von <a href="http://ahspy.com" target="_blank">AHSpy</a> | Charakterdaten von <a href="http://blizzard.github.com/api-wow-docs/"  target="_blank">battle.net</a>
 			</div>
-		</div>
-		
-		<div id="popup" class="popup_window" style="display:none">
-			<div class="buffer"></div>
-			<div class="popup"><!-- Content goes here --></div>
 		</div>
 		
 		<script type="text/javascript">//<![CDATA[

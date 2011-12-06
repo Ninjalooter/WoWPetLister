@@ -1,4 +1,5 @@
-﻿<html>
+﻿<!DOCTYPE html>
+<html>
 	<head>
 		<title>WoW Pet Lister - Ninjalooter</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
@@ -131,13 +132,13 @@
 							
 							jQuery.each(gDecoratorAndFilters, function(_i, decorator) {
 								if ( decorator.css_class &&
-									 jQuery.inArray(id, decorator.ids) > -1) {
+									jQuery.inArray(id, decorator.ids) > -1) {
 									td.addClass(decorator.css_class);
 								}
 							});
 							
 							container.click(function() {
-								popup_show(value, character);
+								popup_show(character, missingSpells, value);
 								return false;
 							});
 							
@@ -232,8 +233,6 @@
 							}
 						}
 					});
-					
-					
 				};
 				$("#btn_scan").click(searchFunction);
 				$("#charname").keypress(function(event) {
@@ -254,7 +253,7 @@
 				<img id="logo" class="center" title="WoW Pet Lister" src="WPL_Banner.png" alt="" width="600" height="100" />
 			</div>			
 			<div id="nav" class="bar">
-				Pr&auml;sentiert von <a href="http://ninjalooter.de" target="_blank">Ninjalooter.de</a> | Version 1.2.1
+				Pr&auml;sentiert von <a href="http://ninjalooter.de" target="_blank">Ninjalooter.de</a> | Version 1.2.2
 			</div>
 			<div class="content">
 				<div>

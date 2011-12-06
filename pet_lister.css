@@ -175,29 +175,47 @@ a {
 	font-family:Tahoma, Helvetica, Geneva, Verdana, Arial, sans-serif;
 }
 #popup .buffer {
-	margin-top:-100px;
+	margin-top:-200px;
 	height:50%;
 }
 #popup .popup_nav {
 	width:700px;
-	background-color:red;
+	background-color:white;
+	border:2px black solid;
 	border-radius:15px;
 	margin:auto;
 	cursor:pointer;
+	position:relative;
 }
+.popup_nav .nav_next, 
+.popup_nav .nav_previous {
+	position:absolute;
+	top:16px;
+	
+	width:43px;
+	height:33px;
+}
+.popup_nav .nav_previous  {
+	left:8px;
+	background:url(imgs/Arrow_links.png) right center no-repeat;
+}
+.popup_nav .nav_next{
+	right:8px;
+	background:url(imgs/Arrow.png) right center no-repeat;
+}
+
 #popup .popup {
 	border-radius:15px;
 	margin:auto;
 	width:550px;
 	min-height:300px;
 	
+	
 	padding-top:10px;
 	padding-left:10px;
 	padding-right:10px;
 	padding-bottom:16px;
-	
 	background-color:white;
-	border:2px black solid;
 	cursor: default;
 }
 .popup_head {
